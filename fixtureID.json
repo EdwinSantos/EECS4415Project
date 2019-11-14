@@ -1,0 +1,1451 @@
+{
+	"api": {
+		"results": 38,
+		"fixtures": [
+			{
+				"fixture_id": 157024,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-08-11T16:30:00+01:00",
+				"event_timestamp": 1565537400,
+				"firstHalfStart": 1565537400,
+				"secondHalfStart": 1565541000,
+				"round": "Regular Season - 1",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Old Trafford (Manchester)",
+				"referee": "Anthony Taylor, England",
+				"homeTeam": {
+					"team_id": 33,
+					"team_name": "Manchester United",
+					"logo": "https://media.api-football.com/teams/33.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 4,
+				"goalsAwayTeam": 0,
+				"score": {
+					"halftime": "1-0",
+					"fulltime": "4-0",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157028,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-08-18T16:30:00+01:00",
+				"event_timestamp": 1566142200,
+				"firstHalfStart": 1566142200,
+				"secondHalfStart": 1566145800,
+				"round": "Regular Season - 2",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge (London)",
+				"referee": "Graham Scott, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 46,
+					"team_name": "Leicester",
+					"logo": "https://media.api-football.com/teams/46.png"
+				},
+				"goalsHomeTeam": 1,
+				"goalsAwayTeam": 1,
+				"score": {
+					"halftime": "1-0",
+					"fulltime": "1-1",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157040,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-08-24T12:30:00+01:00",
+				"event_timestamp": 1566646200,
+				"firstHalfStart": 1566646200,
+				"secondHalfStart": 1566649800,
+				"round": "Regular Season - 3",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Carrow Road (Norwich, Norfolk)",
+				"referee": "Martin Atkinson, England",
+				"homeTeam": {
+					"team_id": 71,
+					"team_name": "Norwich",
+					"logo": "https://media.api-football.com/teams/71.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 3,
+				"score": {
+					"halftime": "2-2",
+					"fulltime": "2-3",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157047,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-08-31T15:00:00+01:00",
+				"event_timestamp": 1567260000,
+				"firstHalfStart": 1567260000,
+				"secondHalfStart": 1567263600,
+				"round": "Regular Season - 4",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge (London)",
+				"referee": "Stuart Attwell, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 62,
+					"team_name": "Sheffield Utd",
+					"logo": "https://media.api-football.com/teams/62.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 2,
+				"score": {
+					"halftime": "2-0",
+					"fulltime": "2-2",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157064,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-09-14T15:00:00+01:00",
+				"event_timestamp": 1568469600,
+				"firstHalfStart": 1568469600,
+				"secondHalfStart": 1568473200,
+				"round": "Regular Season - 5",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Molineux Stadium (Wolverhampton, West Midlands)",
+				"referee": "Graham Scott, England",
+				"homeTeam": {
+					"team_id": 39,
+					"team_name": "Wolves",
+					"logo": "https://media.api-football.com/teams/39.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 5,
+				"score": {
+					"halftime": "0-3",
+					"fulltime": "2-5",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157067,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-09-22T16:30:00+01:00",
+				"event_timestamp": 1569166200,
+				"firstHalfStart": 1569166200,
+				"secondHalfStart": 1569169800,
+				"round": "Regular Season - 6",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge (London)",
+				"referee": "Michael Oliver, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 40,
+					"team_name": "Liverpool",
+					"logo": "https://media.api-football.com/teams/40.png"
+				},
+				"goalsHomeTeam": 1,
+				"goalsAwayTeam": 2,
+				"score": {
+					"halftime": "0-2",
+					"fulltime": "1-2",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157077,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-09-28T15:00:00+01:00",
+				"event_timestamp": 1569679200,
+				"firstHalfStart": 1569679200,
+				"secondHalfStart": 1569682800,
+				"round": "Regular Season - 7",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge (London)",
+				"referee": "Chris Kavanagh, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 51,
+					"team_name": "Brighton",
+					"logo": "https://media.api-football.com/teams/51.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 0,
+				"score": {
+					"halftime": "0-0",
+					"fulltime": "2-0",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157092,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-10-06T14:00:00+01:00",
+				"event_timestamp": 1570366800,
+				"firstHalfStart": 1570366800,
+				"secondHalfStart": 1570370400,
+				"round": "Regular Season - 8",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "St. Mary's Stadium (Southampton, Hampshire)",
+				"referee": "Paul Tierney, England",
+				"homeTeam": {
+					"team_id": 41,
+					"team_name": "Southampton",
+					"logo": "https://media.api-football.com/teams/41.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 1,
+				"goalsAwayTeam": 4,
+				"score": {
+					"halftime": "1-3",
+					"fulltime": "1-4",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157097,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-10-19T15:00:00+01:00",
+				"event_timestamp": 1571493600,
+				"firstHalfStart": 1571493600,
+				"secondHalfStart": 1571497200,
+				"round": "Regular Season - 9",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge (London)",
+				"referee": "Andre Marriner, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 34,
+					"team_name": "Newcastle",
+					"logo": "https://media.api-football.com/teams/34.png"
+				},
+				"goalsHomeTeam": 1,
+				"goalsAwayTeam": 0,
+				"score": {
+					"halftime": "0-0",
+					"fulltime": "1-0",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157107,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-10-26T17:30:00+01:00",
+				"event_timestamp": 1572107400,
+				"firstHalfStart": 1572107400,
+				"secondHalfStart": 1572111000,
+				"round": "Regular Season - 10",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Turf Moor",
+				"referee": "Michael Oliver, England",
+				"homeTeam": {
+					"team_id": 44,
+					"team_name": "Burnley",
+					"logo": "https://media.api-football.com/teams/44.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 4,
+				"score": {
+					"halftime": "0-2",
+					"fulltime": "2-4",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157123,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-11-02T17:30:00+00:00",
+				"event_timestamp": 1572715800,
+				"firstHalfStart": 1572715800,
+				"secondHalfStart": 1572719400,
+				"round": "Regular Season - 11",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Vicarage Road, Watford",
+				"referee": "Anthony Taylor, England",
+				"homeTeam": {
+					"team_id": 38,
+					"team_name": "Watford",
+					"logo": "https://media.api-football.com/teams/38.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": 1,
+				"goalsAwayTeam": 2,
+				"score": {
+					"halftime": "0-1",
+					"fulltime": "1-2",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157126,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-11-09T12:30:00+00:00",
+				"event_timestamp": 1573302600,
+				"firstHalfStart": 1573302600,
+				"secondHalfStart": 1573306200,
+				"round": "Regular Season - 12",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Stamford Bridge",
+				"referee": "Mike Dean, England",
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 52,
+					"team_name": "Crystal Palace",
+					"logo": "https://media.api-football.com/teams/52.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 0,
+				"score": {
+					"halftime": "0-0",
+					"fulltime": "2-0",
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157141,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-11-23T17:30:00+00:00",
+				"event_timestamp": 1574530200,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 13",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Etihad Stadium (Manchester)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 50,
+					"team_name": "Manchester City",
+					"logo": "https://media.api-football.com/teams/50.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157146,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-11-30T15:00:00+00:00",
+				"event_timestamp": 1575126000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 14",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 48,
+					"team_name": "West Ham",
+					"logo": "https://media.api-football.com/teams/48.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157161,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-04T19:30:00+00:00",
+				"event_timestamp": 1575487800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 15",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 66,
+					"team_name": "Aston Villa",
+					"logo": "https://media.api-football.com/teams/66.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157168,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-07T12:30:00+00:00",
+				"event_timestamp": 1575721800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 16",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Goodison Park (Liverpool)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 45,
+					"team_name": "Everton",
+					"logo": "https://media.api-football.com/teams/45.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157177,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-14T15:00:00+00:00",
+				"event_timestamp": 1576335600,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 17",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 35,
+					"team_name": "Bournemouth",
+					"logo": "https://media.api-football.com/teams/35.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157192,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-22T16:30:00+00:00",
+				"event_timestamp": 1577032200,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 18",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Tottenham Hotspur Stadium (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 47,
+					"team_name": "Tottenham",
+					"logo": "https://media.api-football.com/teams/47.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157197,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-26T15:00:00+00:00",
+				"event_timestamp": 1577372400,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 19",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 41,
+					"team_name": "Southampton",
+					"logo": "https://media.api-football.com/teams/41.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157205,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2019-12-29T14:00:00+00:00",
+				"event_timestamp": 1577628000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 20",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Emirates Stadium (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 42,
+					"team_name": "Arsenal",
+					"logo": "https://media.api-football.com/teams/42.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157216,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-01-01T12:30:00+00:00",
+				"event_timestamp": 1577881800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 21",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "The American Express Community Stadium (Falmer, East Sussex)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 51,
+					"team_name": "Brighton",
+					"logo": "https://media.api-football.com/teams/51.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157227,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-01-11T15:00:00+00:00",
+				"event_timestamp": 1578754800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 22",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 44,
+					"team_name": "Burnley",
+					"logo": "https://media.api-football.com/teams/44.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157240,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-01-18T17:30:00+00:00",
+				"event_timestamp": 1579368600,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 23",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "St. James' Park (Newcastle upon Tyne)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 34,
+					"team_name": "Newcastle",
+					"logo": "https://media.api-football.com/teams/34.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157252,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-01-21T20:15:00+00:00",
+				"event_timestamp": 1579637700,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 24",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 42,
+					"team_name": "Arsenal",
+					"logo": "https://media.api-football.com/teams/42.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157258,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-02-01T15:00:00+00:00",
+				"event_timestamp": 1580569200,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 25",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "King Power Stadium (Leicester, Leicestershire)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 46,
+					"team_name": "Leicester",
+					"logo": "https://media.api-football.com/teams/46.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157268,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-02-08T15:00:00+00:00",
+				"event_timestamp": 1581174000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 26",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 33,
+					"team_name": "Manchester United",
+					"logo": "https://media.api-football.com/teams/33.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157277,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-02-22T15:00:00+00:00",
+				"event_timestamp": 1582383600,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 27",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 47,
+					"team_name": "Tottenham",
+					"logo": "https://media.api-football.com/teams/47.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157285,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-02-29T15:00:00+00:00",
+				"event_timestamp": 1582988400,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 28",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Vitality Stadium (Bournemouth, Dorset)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 35,
+					"team_name": "Bournemouth",
+					"logo": "https://media.api-football.com/teams/35.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157297,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-03-07T15:00:00+00:00",
+				"event_timestamp": 1583593200,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 29",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 45,
+					"team_name": "Everton",
+					"logo": "https://media.api-football.com/teams/45.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157306,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-03-14T15:00:00+00:00",
+				"event_timestamp": 1584198000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 30",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Villa Park (Birmingham)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 66,
+					"team_name": "Aston Villa",
+					"logo": "https://media.api-football.com/teams/66.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157316,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-03-21T15:00:00+00:00",
+				"event_timestamp": 1584802800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 31",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 50,
+					"team_name": "Manchester City",
+					"logo": "https://media.api-football.com/teams/50.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157334,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-04-04T15:00:00+01:00",
+				"event_timestamp": 1586008800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 32",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "London Stadium (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 48,
+					"team_name": "West Ham",
+					"logo": "https://media.api-football.com/teams/48.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157336,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-04-11T15:00:00+01:00",
+				"event_timestamp": 1586613600,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 33",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 38,
+					"team_name": "Watford",
+					"logo": "https://media.api-football.com/teams/38.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157349,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-04-18T15:00:00+01:00",
+				"event_timestamp": 1587218400,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 34",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Selhurst Park (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 52,
+					"team_name": "Crystal Palace",
+					"logo": "https://media.api-football.com/teams/52.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157361,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-04-25T15:00:00+01:00",
+				"event_timestamp": 1587823200,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 35",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Bramall Lane (Sheffield)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 62,
+					"team_name": "Sheffield Utd",
+					"logo": "https://media.api-football.com/teams/62.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157367,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-05-02T15:00:00+01:00",
+				"event_timestamp": 1588428000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 36",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 71,
+					"team_name": "Norwich",
+					"logo": "https://media.api-football.com/teams/71.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157378,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-05-09T15:00:00+01:00",
+				"event_timestamp": 1589032800,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 37",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Anfield (Liverpool)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 40,
+					"team_name": "Liverpool",
+					"logo": "https://media.api-football.com/teams/40.png"
+				},
+				"awayTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			},
+			{
+				"fixture_id": 157387,
+				"league_id": 524,
+				"league": {
+					"name": "Premier League",
+					"country": "England",
+					"logo": "https://media.api-football.com/leagues/2.png",
+					"flag": "https://media.api-football.com/flags/gb.svg"
+				},
+				"event_date": "2020-05-17T15:00:00+01:00",
+				"event_timestamp": 1589724000,
+				"firstHalfStart": null,
+				"secondHalfStart": null,
+				"round": "Regular Season - 38",
+				"status": "Not Started",
+				"statusShort": "NS",
+				"elapsed": 0,
+				"venue": "Stamford Bridge (London)",
+				"referee": null,
+				"homeTeam": {
+					"team_id": 49,
+					"team_name": "Chelsea",
+					"logo": "https://media.api-football.com/teams/49.png"
+				},
+				"awayTeam": {
+					"team_id": 39,
+					"team_name": "Wolves",
+					"logo": "https://media.api-football.com/teams/39.png"
+				},
+				"goalsHomeTeam": null,
+				"goalsAwayTeam": null,
+				"score": {
+					"halftime": null,
+					"fulltime": null,
+					"extratime": null,
+					"penalty": null
+				}
+			}
+		]
+	}
+}
