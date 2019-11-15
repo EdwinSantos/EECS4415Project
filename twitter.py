@@ -2,6 +2,7 @@
 
 import re
 import tweepy
+import json
 from tweepy import OAuthHandler
 from textblob import TextBlob
 
@@ -28,11 +29,23 @@ class Twitter(object):
         try:
             fetched = self.api.search(q=query, count=count)
             for tweet in fetched:
+                tags = ''
+                timestamp = tweet._json["created_at"]
+                hashtags = tweet._json["entities"].get("hashtags")
+                for dit in hashtags:
+                    tags += "#" + dit.get("text") + ","
+                text = tweet._json["text"]
+                print(json.dumps(timestamp + "\t" + text + "\t" + tags, sort_keys=True, indent=4))
+            '''
+            for tweet in fetched:
                 if tweet.retweet_count > 0:
                     if tweet.text not in tweets:
-                        tweets.append(self.clean_tweet(tweet.text))
+                        #tweets.append(self.clean_tweet(tweet.text))
+                        print(tweet._json)
                 else:
-                    tweets.append(self.clean_tweet(tweet.text))
+                    #tweets.append(self.clean_tweet(tweet.text))
+                    print(tweet._json)
+                    '''
             return tweets
 
         except tweepy.TweepError as e:
@@ -41,8 +54,8 @@ class Twitter(object):
 def main():
     client = Twitter()
     tweets = client.get_tweets(query='warriors', count=100)
-    for t in tweets[:10]:
-        print(t + "\n")
+    #for t in tweets[:10]:
+     #   print(t + "\n")
 
 if __name__=="__main__":
     main()
