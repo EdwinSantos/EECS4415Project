@@ -22,20 +22,22 @@ class Twitter(object):
             print("auth error")
 
     def clean_tweet(self, tweet):
-        return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
+        return ' '.join(re.sub("(@[A-Za-z0-9]+)", " ", tweet).split())
 
     def get_tweets(self, query, count = 10):
-        tweets = []
         try:
             fetched = self.api.search(q=query, count=count)
             for tweet in fetched:
-                tags = ''
-                timestamp = tweet._json["created_at"]
-                hashtags = tweet._json["entities"].get("hashtags")
-                for dit in hashtags:
-                    tags += "#" + dit.get("text") + ","
-                text = tweet._json["text"]
-                print(json.dumps(timestamp + "\t" + text + "\t" + tags, sort_keys=True, indent=4))
+                if tweet.lang == "en":
+                    tags = ''
+                    timestamp = tweet._json["created_at"]
+                    hashtags = tweet._json["entities"].get("hashtags")
+                    for dit in hashtags:
+                        tags += "#" + dit.get("text") + ","
+                    text = self.clean_tweet(tweet._json["text"])
+                    text = re.sub(r'\n', '', text)
+                    text = re.sub(r'\t', '', text)
+                    print(json.dumps(timestamp + "\t" + text + "\t" + tags, sort_keys=True, indent=4))
             '''
             for tweet in fetched:
                 if tweet.retweet_count > 0:
@@ -46,14 +48,12 @@ class Twitter(object):
                     #tweets.append(self.clean_tweet(tweet.text))
                     print(tweet._json)
                     '''
-            return tweets
-
         except tweepy.TweepError as e:
             print("error: " + str(e))
 
 def main():
     client = Twitter()
-    tweets = client.get_tweets(query='warriors', count=100)
+    client.get_tweets(query='#warriors -filter:retweets -filter:links', count=100)
     #for t in tweets[:10]:
      #   print(t + "\n")
 
