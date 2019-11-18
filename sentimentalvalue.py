@@ -12,22 +12,24 @@ df = pd.DataFrame(columns=COLS)
 
 ## apply sent value on tweets
 for index, row in islice(data.iterrows(), 0, None):
-
     new_entry = []
     Lower = ((row['text']).lower())
     blob = TextBlob(Lower)
     sentiment = blob.sentiment
-
     polarity = sentiment.polarity
     subjectivity = sentiment.subjectivity
 
     new_entry += [row['timestamp'], Lower, sentiment, subjectivity, polarity]
+
     single_survey_sentiment_df = pd.DataFrame([new_entry], columns=COLS)
     df = df.append(single_survey_sentiment_df, ignore_index=True)
+
 ##
 df.to_csv('Sentiment_Values.csv', mode='w', columns=COLS, index=False, encoding="utf-8")
+print(df[df.date.dt.strftime('%H:%M:%S').between('06:00', '06:30')])
+##df['date'] = df[df.set_index('date') < '06:30:00'].reset_index()
 
-print(df)
+##print(df)
 
 ## needed for later 
 ##hash_tag_retrieval = data.iloc[:, -1]
