@@ -92,7 +92,7 @@ awaytag = sys.argv[2]
 neutraltag = sys.argv[3]
 stamp = sys.argv[4]
 start_time = time.time()
-END_TIME = 7200
+END_TIME = 90
 if "#" not in hometag:
     hometag = "#" + hometag
 if "#" not in awaytag:
@@ -148,13 +148,15 @@ class listener(StreamListener):
         timestamp = self.converter(timestamp)
 
         string = str(timestamp) + "\t" + tweet + "\t" + tag + "\n"
-        if (time.time() - self.t <= 300):
-            self.f.write(string)
-        elif (time.time() - self.t > 300):
+        if (time.time() - self.t <= 60):
+            self.f.write(json.dumps(string))
+            self.f.write("\n")
+        elif (time.time() - self.t > 60):
             self.t = time.time()
             self.f.close()
             self.f = open(neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
-            self.f.write(string)
+            self.f.write(json.dumps(string))
+            self.f.write("\n")
 
         # print(json.dumps(timestamp + "\t" + tweet + "\t" + tags, sort_keys=True, indent=4))
         return True
