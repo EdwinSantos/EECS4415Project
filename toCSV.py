@@ -16,12 +16,12 @@ with open('tweets.csv', 'a+', newline ='') as csvfile:
 
 for filename in os.listdir('.'):
     with open(filename, 'r', encoding='utf-16') as txtfile:
-        # lines = txtfile.readlines()
-        lines = json.load(txtfile)
+        lines = txtfile.readlines()
+        # lines = json.load(txtfile)
 
         for line in lines:
             line = line.strip()
-            # line = re.sub(r'^"', '', line)
+            line = re.sub(r'^"', '', line)
             # line = re.sub(r'"$', '', line)
             line = re.split(r'\\t', line)
             writer.writerow(line)
