@@ -150,13 +150,11 @@ class listener(StreamListener):
         string = str(timestamp) + "\t" + tweet + "\t" + tag + "\n"
         if (time.time() - self.t <= 60):
             self.f.write(json.dumps(string))
-            self.f.write("\n")
         elif (time.time() - self.t > 60):
             self.t = time.time()
             self.f.close()
             self.f = open(neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
             self.f.write(json.dumps(string))
-            self.f.write("\n")
 
         # print(json.dumps(timestamp + "\t" + tweet + "\t" + tags, sort_keys=True, indent=4))
         return True
