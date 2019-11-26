@@ -90,24 +90,25 @@ class Twitter(tweepy.StreamListener):
 hometag = sys.argv[1]
 awaytag = sys.argv[2]
 neutraltag = sys.argv[3]
+nt = sys.argv[3]
 stamp = sys.argv[4]
 start_time = time.time()
-END_TIME = 90
+END_TIME = 50
 if "#" not in hometag:
     hometag = "#" + hometag
 if "#" not in awaytag:
     awaytag = "#" + awaytag
 if "#" not in neutraltag:
     neutraltag = "#" + neutraltag
-if not os.path.exists(neutraltag):
-    os.makedirs(neutraltag)
+if not os.path.exists(nt):
+    os.makedirs(nt)
 with open("hashtags.txt", "w") as fs:
     fs.write(hometag + "\n")
     fs.write(awaytag + "\n")
     fs.write(neutraltag + "\n")
 
 class listener(StreamListener):
-    f = open(neutraltag + "/" + neutraltag + "-" + str(stamp) + ".json", "a", encoding='utf-16')
+    f = open(nt + "/" + nt + "-" + str(stamp) + ".json", "a", encoding='utf-16')
     t = time.time()
     def on_data(self, data):
         if (time.time() - start_time >= END_TIME):
@@ -148,13 +149,13 @@ class listener(StreamListener):
         timestamp = self.converter(timestamp)
 
         string = str(timestamp) + "\t" + tweet + "\t" + tag
-        if (time.time() - self.t <= 60):
+        if (time.time() - self.t <= 300):
             self.f.write(json.dumps(string))
             self.f.write("\n")
-        elif (time.time() - self.t > 60):
+        elif (time.time() - self.t > 300):
             self.t = time.time()
             self.f.close()
-            self.f = open(neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
+            self.f = open(nt + "/" + nt + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
             self.f.write(json.dumps(string))
             self.f.write("\n")
 
@@ -162,7 +163,8 @@ class listener(StreamListener):
         return True
 
     def on_error(self, status):
-        print (status)
+        # print (status)
+        return
 
     def converter(self, ts):
         epoch = time.strftime('%d-%m-%Y %H:%M:%S', time.strptime(ts,'%a %b %d %H:%M:%S +0000 %Y'))
@@ -171,7 +173,7 @@ class listener(StreamListener):
         return epoch
 
     def new_file(self):
-        string = neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json"
+        string = nt + "/" + nt + "-" + str(time.time()) + ".json"
         f = open(string, "a", encoding='utf-16')
         return f
 '''
@@ -211,6 +213,8 @@ auth.set_access_token(atoken, asecret)
 twitterStream = Stream(auth, listener(), tweet_mode='extended')
 twitterStream.filter(track=[hometag,awaytag,neutraltag],encoding='utf-8',languages=["en"])
 twitterStream.running = False
+if not twitterStream.running:
+    print("stream finished")
 
 
 
