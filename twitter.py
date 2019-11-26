@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import os
 import re
 import tweepy
 import json
@@ -85,63 +86,75 @@ class Twitter(tweepy.StreamListener):
         self.until = u
         return self.since, self.until
 '''
+
 hometag = sys.argv[1]
 awaytag = sys.argv[2]
 neutraltag = sys.argv[3]
 stamp = sys.argv[4]
 start_time = time.time()
-END_TIME = 240
+END_TIME = 7200
 if "#" not in hometag:
     hometag = "#" + hometag
 if "#" not in awaytag:
     awaytag = "#" + awaytag
 if "#" not in neutraltag:
     neutraltag = "#" + neutraltag
+if not os.path.exists(neutraltag):
+    os.makedirs(neutraltag)
 with open("hashtags.txt", "w") as fs:
     fs.write(hometag + "\n")
     fs.write(awaytag + "\n")
     fs.write(neutraltag + "\n")
 
 class listener(StreamListener):
-    f = open("dump/" + neutraltag + "-" + str(stamp) + ".json", "a", encoding='utf-16')
+    f = open(neutraltag + "/" + neutraltag + "-" + str(stamp) + ".json", "a", encoding='utf-16')
     t = time.time()
     def on_data(self, data):
         if (time.time() - start_time >= END_TIME):
             return False
         all_data = json.loads(data)
-        if not all_data["lang"] == "en":
+        #if not all_data["lang"] == "en":
+        #    return True
+        if all_data['retweeted'] or 'RT @' in all_data['text']:
             return True
+        if "extended_tweet" in all_data:
+            if "full_text" in all_data["extended_tweet"]:
+                tweet = all_data["extended_tweet"]["full_text"]
+            else:
+                tweet = all_data["text"]
+            if "entities" in all_data["extended_tweet"]:
+                hashtags = all_data["extended_tweet"]["entities"].get("hashtags")
+            else:
+                hashtags = all_data["entities"].get("hashtags")
         else:
             tweet = all_data["text"]
-            timestamp = all_data["created_at"]
             hashtags = all_data["entities"].get("hashtags")
-            tags = []
+        timestamp = all_data["created_at"]
+        tags = []
+        tag = ''
+        for dit in hashtags:
+            tags.append("#" + dit.get("text"))
+        if hometag in tags:
+            tag = hometag
+        elif awaytag in tags:
+            tag = awaytag
+        elif neutraltag in tags:
+            tag = neutraltag
+        else:
             tag = ''
-            for dit in hashtags:
-                tags.append(dit.get("text"))
-                print(dit.get("text"))
-            if hometag in tags:
-                tag = hometag
-            elif awaytag in tags:
-                tag = awaytag
-            elif neutraltag in tags:
-                tag = neutraltag
-            else:
-                tag = ''
-            #tags = tags[:-1]
-            print("tag: " + tag)
-            tweet = re.sub(r'\n', '', tweet)
-            tweet = re.sub(r'\t', '', tweet)
-            timestamp = self.converter(timestamp)
+        #tags = tags[:-1]
+        tweet = re.sub(r'\n', '', tweet)
+        tweet = re.sub(r'\t', '', tweet)
+        timestamp = self.converter(timestamp)
 
-            string = str(timestamp) + "\t" + tweet + "\t" + tag + "\n"
-            if (time.time() - self.t <= 60):
-                self.f.write(string)
-            elif (time.time() - self.t > 60):
-                self.t = time.time()
-                self.f.close()
-                self.f = open("dump/" + neutraltag + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
-                self.f.write(string)
+        string = str(timestamp) + "\t" + tweet + "\t" + tag + "\n"
+        if (time.time() - self.t <= 300):
+            self.f.write(string)
+        elif (time.time() - self.t > 300):
+            self.t = time.time()
+            self.f.close()
+            self.f = open(neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json", "a", encoding='utf-16')
+            self.f.write(string)
 
         # print(json.dumps(timestamp + "\t" + tweet + "\t" + tags, sort_keys=True, indent=4))
         return True
@@ -156,7 +169,7 @@ class listener(StreamListener):
         return epoch
 
     def new_file(self):
-        string = "dump/" + neutraltag + "-" + str(time.time()) + ".json"
+        string = neutraltag + "/" + neutraltag + "-" + str(time.time()) + ".json"
         f = open(string, "a", encoding='utf-16')
         return f
 '''
@@ -193,8 +206,8 @@ with open('twitkeys.txt') as f:
     asecret = f.readline().rstrip()
 auth = OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
-twitterStream = Stream(auth, listener())
-twitterStream.filter(track=[hometag,awaytag,neutraltag],encoding='utf-8')
+twitterStream = Stream(auth, listener(), tweet_mode='extended')
+twitterStream.filter(track=[hometag,awaytag,neutraltag],encoding='utf-8',languages=["en"])
 twitterStream.running = False
 
 
