@@ -93,7 +93,7 @@ neutraltag = sys.argv[3]
 nt = sys.argv[3]
 stamp = sys.argv[4]
 start_time = time.time()
-END_TIME = 50
+END_TIME = 7200
 if "#" not in hometag:
     hometag = "#" + hometag
 if "#" not in awaytag:
