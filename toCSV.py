@@ -26,7 +26,6 @@ with open('tweets.csv', 'a+', newline ='') as csvfile:
 
 
 
-    
 # with open('tweets.csv', 'r+', newline ='') as readcsv:
 #     spamreader = csv.DictReader(readcsv)
 #     # sortedlist = sorted(spamreader, key=lambda row: row[2], reverse=False )
