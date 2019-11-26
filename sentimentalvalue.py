@@ -25,7 +25,7 @@ df3 = pd.DataFrame(columns=COLS)
 
 
 ## apply sent value on tweets
-for index, row in islice(dataframe_list[0].iterrows(), 0, None):
+for index, row in islice(dataframe_list[1].iterrows(), 0, None):
     new_entry = []
     Lower = ((row['text']).lower())
     blob = TextBlob(Lower)
@@ -37,7 +37,7 @@ for index, row in islice(dataframe_list[0].iterrows(), 0, None):
     single_survey_sentiment_df = pd.DataFrame([new_entry], columns=COLS)
     df = df.append(single_survey_sentiment_df, ignore_index=True)
 
-for index, row in islice(dataframe_list[1].iterrows(), 0, None):
+for index, row in islice(dataframe_list[0].iterrows(), 0, None):
     new_entry2 = []
     Lower2 = ((row['text']).lower())
     blob2 = TextBlob(Lower2)
@@ -75,7 +75,7 @@ new_entry4 += ['timestamp'+str(+ 300), sent_df, sent_df2, sent_df3]
 final = pd.DataFrame([new_entry4], columns=COL)
 final_df = final_df.append(final, ignore_index=True)
 print(df)
-final_df.to_csv(r'C:\Users\AmirYounesi\PycharmProjects\bigdata\b\SentimentValues.csv', mode='w', columns=COL, index=False, encoding="utf-8")
+final_df.to_csv(r'C:\Users\AmirY\PycharmProjects\bigdata\b\SentimentValues.csv', mode='w', columns=COL, index=False, encoding="utf-8")
 
 
 
