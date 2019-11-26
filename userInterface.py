@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import json
+import os
 from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -8,27 +9,16 @@ import requests
 
 league_id = 524
 
-teams = {
-    "Liverpool": 40,
-    "Norwich": 71,
-    "West_Ham": 48,
-    "Manchester_City": 50,
-    "Bournemouth": 35,
-    "Sheffield_Utd": 62,
-    "Burnley": 44,
-    "Southampton": 41,
-    "Crystal_Palace": 52,
-    "Everton": 45,
-    "Leicester": 46,
-    "Wolves": 39,
-    "Watford": 38,
-    "Brighton": 51,
-    "Tottenham": 47,
-    "Aston_Villa": 66,
-    "Newcastle": 34,
-    "Arsenal": 42,
-    "Manchester United": 33,
-    "Chelsea": 49,
+leagues = {
+    "Champions League": 530,
+    "Premier League": 524,
+    "Championship": 565
+}
+
+modes = {
+    "Tweet Farming": 1,
+    "Tweet Analyzing": 2,
+    "Creating Graph": 3
 }
 
 debugging = False
@@ -37,83 +27,57 @@ debugging = False
 def main():
     global debugging
     debugging = (input("Running in debug mode (Y/N): ") == "Y")
-    print(debugging)
-    # Replace this with a list of teams taken from the API
-    if not debugging:
-        for team in teams:
-            print(repr(team), ":", teams[team])
-        home_team_id = int(input("Enter home team number: "))
-        way_team_id = int(input("Enter away team number: "))
-        home_team_hashtag = input("Enter home team hashtag: ")
-        away_team_hashtag = input("Enter away team hashtag: ")
-        neutral_team_hashtag = input("Enter neutral hashtag: ")
+    for mode in modes:
+        print(repr(mode), ":", modes[mode])
+    mode_id = int(input("What mode are you running in: "))
+
+    if mode_id == 1:
+        if not debugging:
+            for league in leagues:
+                print(repr(league), ":", leagues[league])
+            league_id = int(input("Enter league ID: "))
+            teams = get_teams(league_id)
+            for team in teams:
+                print(repr(teams), ":", teams[team])
+            # get teams in that league
+            home_team_id = int(input("Enter home team number: "))
+            away_team_id = int(input("Enter away team number: "))
+            home_team_hashtag = input("Enter home team hashtag: ")
+            away_team_hashtag = input("Enter away team hashtag: ")
+            neutral_team_hashtag = input("Enter neutral hashtag: ")
+        else:
+            league_id = 524
+            home_team_id = 49
+            away_team_id = 52
+            home_team_hashtag = "#Chelsea"
+            away_team_hashtag = "#Crystal_Palace"
+            neutral_team_hashtag = "#CheVSCry"
+        # pass hashtags to twitter class that will take care of getting the tweets
+        fixture_ID = get_fixtureID(home_team_id, away_team_id)
+        match_events, timestamp = get_match_events(fixture_ID)
+        print('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
+                  neutral_team_hashtag[1:] + " " + timestamp)
+        os.system('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
+                  neutral_team_hashtag[1:] + " " + timestamp)
+    elif mode_id == 2:
+        # Trigger analyzer to process tweets that were outputed by the farm
+        os.system("python cleanTweets.py")
+    elif mode_id == 3:
+        os.system("python makeGraph.py")
+
+
+def get_teams(league_id):
+    url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/" + str(league_id)
+    if debugging:
+        with open("premteams.json", encoding="utf8") as json_file:
+            json_response = json.load(json_file)
     else:
-        home_team_id = 49
-        away_team_id = 52
-        home_team_hashtag = "#Chelsea"
-        away_team_hashtag = "#Crystal_Palace"
-        neutral_team_hashtag = "#CheVSCry"
-
-    # pass hashtags to twitter class that will take care of getting the tweets
-    fixture_ID, timestamp = get_fixtureID(home_team_id, away_team_id)
-    match_events = get_match_events(fixture_ID)
-    # pass events and tweet ratings to class that will make the graph
-    build_graph(match_events)
-
-
-def build_graph(match_events):
-    start_time, end_time, events = handle_events(match_events)
-
-    fig, ax = plt.subplots()
-    fig.autofmt_xdate()
-    ax.set_xlim([start_time, end_time])
-    for event in events:
-        plt.axvline(event[0])
-        print(event[1])
-        plt.text(event[0], 0, event[1], rotation=90)
-    plt.xlabel("Time")
-    plt.ylabel("Sentiment")
-    plt.show()
-    plt.savefig("Graph")
-
-    # Add events here
-
-
-def handle_events(match_events):
-    all_events = []
-    json_events = json.loads(match_events)
-    event_df = pd.DataFrame()
-
-    # Start time = start_time - extra coverage
-    graph_start_time_unix = json_events["firstHalfStart"] - 900
-    graph_start_time = datetime.fromtimestamp(graph_start_time_unix)
-
-    # Endtime = start_time + match lenght + extra coverage
-    graph_end_time_unix = json_events["firstHalfStart"] + 6300 + 900
-    graph_end_time = datetime.fromtimestamp(graph_end_time_unix)
-
-    first_half_start = datetime.fromtimestamp(graph_start_time_unix + 900)
-    all_events.append([first_half_start, "Match Start"])
-
-    first_half_end = datetime.fromtimestamp(graph_start_time_unix + 900 + 2700)
-    all_events.append([first_half_end, "First Half Ends"])
-    second_half_start = datetime.fromtimestamp(graph_end_time_unix - 900 - 2700)
-    all_events.append([second_half_start, "Second Half Starts"])
-    second_half_end = datetime.fromtimestamp(graph_end_time_unix - 900)
-    all_events.append([second_half_end, "Match Ends"])
-
-    for event in json_events["events"]:
-        game_time = event["elapsed"]
-        detail = str(game_time) + " " + event["detail"] + " " + event["player"] + " (" + event["teamName"] + ")"
-
-        if game_time >= 45:
-            game_time = game_time + 15
-        timestamp = datetime.fromtimestamp(graph_start_time_unix + 900 + (game_time * 60))
-        moment = [timestamp, detail]
-        all_events.append(moment)
-
-    return graph_start_time, graph_end_time, all_events
-
+        response = query_api(url)
+        json_response = json.load(response)
+    teams = {}
+    for team in json.response["api"]["teams"]:
+        teams[team["name"]] = team["team_id"]
+    return teams
 
 def get_fixtureID(home_team_id, away_team_id):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/" + str(home_team_id) + "/" + str(league_id)
@@ -131,10 +95,9 @@ def get_fixtureID(home_team_id, away_team_id):
         if (fixture["homeTeam"]["team_id"] == home_team_id and fixture["awayTeam"]["team_id"] == away_team_id and
                 fixture["league_id"] == 524 and fixture["status"] == "Match Finished"):
             targetFixture_id = fixture["fixture_id"]
-            timestamp = fixture["event_date"]
             break
         # Error catching stuff should go here.
-    return targetFixture_id, timestamp
+    return targetFixture_id
 
 
 def get_match_events(fixture_ID):
@@ -148,7 +111,8 @@ def get_match_events(fixture_ID):
         json_response = json.load(response.read())
 
     match_events = json.dumps(json_response["api"]["fixtures"][0])
-    return match_events
+    timestamp = json.dumps(json_response["api"]["fixtures"][0]["event_timestamp"])
+    return match_events, timestamp
 
 
 def query_api(url):
