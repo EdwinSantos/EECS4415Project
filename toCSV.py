@@ -4,25 +4,27 @@ import csv
 import re
 import sys
 import os
+import json
 
 # dir = './dump'
 # Directory of txt dump files
-os.chdir('./dump')
+os.chdir('./#TuesdayThoughts')
 
 with open('tweets.csv', 'a+', newline ='') as csvfile:
     writer = csv.writer(csvfile, lineterminator = '\n')
     writer.writerow(('timestamp', 'text', 'hashtags'))
 
-    for filename in os.listdir('.'):
-        with open(filename, 'r', encoding='utf-16') as txtfile:
-            lines = txtfile.readlines()
+for filename in os.listdir('.'):
+    with open(filename, 'r', encoding='utf-16') as txtfile:
+        # lines = txtfile.readlines()
+        lines = json.load(txtfile)
 
-            for line in lines:
-                line = line.strip()
-                line = re.sub(r'^"', '', line)
-                line = re.sub(r'"$', '', line)
-                line = re.split(r'\\t', line)
-                writer.writerow(line)
+        for line in lines:
+            line = line.strip()
+            # line = re.sub(r'^"', '', line)
+            # line = re.sub(r'"$', '', line)
+            line = re.split(r'\\t', line)
+            writer.writerow(line)
 
 
 
