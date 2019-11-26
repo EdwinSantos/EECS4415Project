@@ -23,6 +23,9 @@ with open('tweets.csv', 'a+', newline ='') as csvfile:
                 line = re.sub(r'"$', '', line)
                 line = re.split(r'\\t', line)
                 writer.writerow(line)
+
+
+
     
 # with open('tweets.csv', 'r+', newline ='') as readcsv:
 #     spamreader = csv.DictReader(readcsv)
