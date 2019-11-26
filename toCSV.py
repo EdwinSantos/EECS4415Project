@@ -14,9 +14,9 @@ with open('tweets.csv', 'a+', newline ='') as csvfile:
     writer = csv.writer(csvfile, lineterminator = '\n')
     writer.writerow(('timestamp', 'text', 'hashtags'))
 
-for filename in os.listdir('.'):
-    with open(filename, 'r', encoding='utf-16') as txtfile:
-        lines = txtfile.readlines()
+    for filename in os.listdir('.'):
+        with open(filename, 'r', encoding='utf-16') as txtfile:
+            lines = txtfile.readlines()
         # lines = json.load(txtfile)
 
         for line in lines:
