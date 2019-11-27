@@ -8,7 +8,7 @@ import json
 
 # dir = './dump'
 # Directory of txt dump files
-os.chdir('./JuveAtleti')
+os.chdir('./RMAPSG')
 
 with open('tweets.csv', 'a+', newline ='') as csvfile:
     writer = csv.writer(csvfile, lineterminator = '\n')
