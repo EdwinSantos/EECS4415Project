@@ -8,7 +8,7 @@ import json
 
 # dir = './dump'
 # Directory of txt dump files
-os.chdir('./#TuesdayThoughts')
+os.chdir('./JuveAtleti')
 
 with open('tweets.csv', 'a+', newline ='') as csvfile:
     writer = csv.writer(csvfile, lineterminator = '\n')
@@ -22,10 +22,9 @@ with open('tweets.csv', 'a+', newline ='') as csvfile:
         for line in lines:
             line = line.strip()
             line = re.sub(r'^"', '', line)
-            # line = re.sub(r'"$', '', line)
+            line = re.sub(r'"$', '', line)
             line = re.split(r'\\t', line)
             writer.writerow(line)
-
 
 
 # with open('tweets.csv', 'r+', newline ='') as readcsv:
