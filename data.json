@@ -1,0 +1,2075 @@
+{
+	"api": {
+		"results": 1,
+		"fixtures": [
+			{
+				"fixture_id": 240579,
+				"league_id": 530,
+				"league": {
+					"name": "Champions League",
+					"country": "World",
+					"logo": "https://media.api-football.com/leagues/132.png",
+					"flag": null
+				},
+				"event_date": "2019-11-26T20:00:00+00:00",
+				"event_timestamp": 1574798400,
+				"firstHalfStart": 1574798400,
+				"secondHalfStart": 1574802000,
+				"round": "Group Stage - 5",
+				"status": "Match Finished",
+				"statusShort": "FT",
+				"elapsed": 90,
+				"venue": "Santiago Bernabu00e9u, Madrid",
+				"referee": "Artur Soares Dias, Portugal",
+				"homeTeam": {
+					"team_id": 541,
+					"team_name": "Real Madrid",
+					"logo": "https://media.api-football.com/teams/541.png"
+				},
+				"awayTeam": {
+					"team_id": 85,
+					"team_name": "Paris Saint Germain",
+					"logo": "https://media.api-football.com/teams/85.png"
+				},
+				"goalsHomeTeam": 2,
+				"goalsAwayTeam": 2,
+				"score": {
+					"halftime": "1-0",
+					"fulltime": "2-2",
+					"extratime": null,
+					"penalty": null
+				},
+				"events": [
+					{
+						"elapsed": 17,
+						"team_id": 541,
+						"teamName": "Real Madrid",
+						"player_id": 759,
+						"player": "K. Benzema",
+						"assist_id": 745,
+						"assist": "Isco",
+						"type": "Goal",
+						"detail": "Normal Goal"
+					},
+					{
+						"elapsed": 68,
+						"team_id": 541,
+						"teamName": "Real Madrid",
+						"player_id": 743,
+						"player": "Marcelo",
+						"assist_id": null,
+						"assist": "Roughing",
+						"type": "Card",
+						"detail": "Yellow Card"
+					},
+					{
+						"elapsed": 79,
+						"team_id": 541,
+						"teamName": "Real Madrid",
+						"player_id": 759,
+						"player": "K. Benzema",
+						"assist_id": 743,
+						"assist": "Marcelo",
+						"type": "Goal",
+						"detail": "Normal Goal"
+					},
+					{
+						"elapsed": 81,
+						"team_id": 85,
+						"teamName": "Paris Saint Germain",
+						"player_id": 278,
+						"player": "K. Mbappe",
+						"assist_id": 264,
+						"assist": "T. Meunier",
+						"type": "Goal",
+						"detail": "Normal Goal"
+					},
+					{
+						"elapsed": 83,
+						"team_id": 85,
+						"teamName": "Paris Saint Germain",
+						"player_id": 2056,
+						"player": "P. Sarabia",
+						"assist_id": null,
+						"assist": null,
+						"type": "Goal",
+						"detail": "Normal Goal"
+					},
+					{
+						"elapsed": 89,
+						"team_id": 85,
+						"teamName": "Paris Saint Germain",
+						"player_id": 264,
+						"player": "T. Meunier",
+						"assist_id": null,
+						"assist": "Roughing",
+						"type": "Card",
+						"detail": "Yellow Card"
+					}
+				],
+				"lineups": {
+					"Real Madrid": {
+						"formation": "4-3-1-2",
+						"startXI": [
+							{
+								"team_id": 541,
+								"player_id": 730,
+								"player": "Thibaut Courtois",
+								"number": 13,
+								"pos": "G"
+							},
+							{
+								"team_id": 541,
+								"player_id": 733,
+								"player": "Daniel Carvajal",
+								"number": 2,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 742,
+								"player": "Raphau00ebl Varane",
+								"number": 5,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 738,
+								"player": "Sergio Ramos",
+								"number": 4,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 743,
+								"player": "Marcelo",
+								"number": 12,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 756,
+								"player": "Federico Valverde",
+								"number": 15,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 747,
+								"player": "Casemiro",
+								"number": 14,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 752,
+								"player": "Toni Kroos",
+								"number": 8,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 745,
+								"player": "Isco",
+								"number": 22,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 759,
+								"player": "Karim Benzema",
+								"number": 9,
+								"pos": "F"
+							},
+							{
+								"team_id": 541,
+								"player_id": 2296,
+								"player": "Eden Hazard",
+								"number": 7,
+								"pos": "F"
+							}
+						],
+						"substitutes": [
+							{
+								"team_id": 541,
+								"player_id": 253,
+								"player": "Alphonse Aru00e9ola",
+								"number": 1,
+								"pos": "G"
+							},
+							{
+								"team_id": 541,
+								"player_id": 653,
+								"player": "Ferland Mendy",
+								"number": 23,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 372,
+								"player": "u00c9der Militu00e3o",
+								"number": 3,
+								"pos": "D"
+							},
+							{
+								"team_id": 541,
+								"player_id": 10009,
+								"player": "Rodrygo",
+								"number": 27,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 754,
+								"player": "Luka Modriu0107",
+								"number": 10,
+								"pos": "M"
+							},
+							{
+								"team_id": 541,
+								"player_id": 1828,
+								"player": "Luka Joviu0107",
+								"number": 18,
+								"pos": "F"
+							},
+							{
+								"team_id": 541,
+								"player_id": 758,
+								"player": "Gareth Bale",
+								"number": 11,
+								"pos": "F"
+							}
+						],
+						"coach": "Z. Zidane"
+					},
+					"Paris Saint Germain": {
+						"formation": "4-3-3",
+						"startXI": [
+							{
+								"team_id": 85,
+								"player_id": 731,
+								"player": "Keylor Navas",
+								"number": 1,
+								"pos": "G"
+							},
+							{
+								"team_id": 85,
+								"player_id": 264,
+								"player": "Thomas Meunier",
+								"number": 12,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 259,
+								"player": "Thiago Silva",
+								"number": 2,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 262,
+								"player": "Presnel Kimpembe",
+								"number": 3,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 258,
+								"player": "Juan Bernat",
+								"number": 14,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 2990,
+								"player": "Idrissa Gueye",
+								"number": 27,
+								"pos": "M"
+							},
+							{
+								"team_id": 85,
+								"player_id": 257,
+								"player": "Marquinhos",
+								"number": 5,
+								"pos": "M"
+							},
+							{
+								"team_id": 85,
+								"player_id": 273,
+								"player": "Marco Verratti",
+								"number": 6,
+								"pos": "M"
+							},
+							{
+								"team_id": 85,
+								"player_id": 278,
+								"player": "Kylian Mbappu00e9",
+								"number": 7,
+								"pos": "F"
+							},
+							{
+								"team_id": 85,
+								"player_id": 216,
+								"player": "Mauro Icardi",
+								"number": 18,
+								"pos": "F"
+							},
+							{
+								"team_id": 85,
+								"player_id": 266,
+								"player": "u00c1ngel Di Maru00eda",
+								"number": 11,
+								"pos": "F"
+							}
+						],
+						"substitutes": [
+							{
+								"team_id": 85,
+								"player_id": 19014,
+								"player": "Sergio Rico",
+								"number": 16,
+								"pos": "G"
+							},
+							{
+								"team_id": 85,
+								"player_id": 260,
+								"player": "Colin Dagba",
+								"number": 31,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 7,
+								"player": "Abdou Diallo",
+								"number": 22,
+								"pos": "D"
+							},
+							{
+								"team_id": 85,
+								"player_id": 267,
+								"player": "Julian Draxler",
+								"number": 23,
+								"pos": "M"
+							},
+							{
+								"team_id": 85,
+								"player_id": 2056,
+								"player": "Pablo Sarabia",
+								"number": 19,
+								"pos": "M"
+							},
+							{
+								"team_id": 85,
+								"player_id": 274,
+								"player": "Edinson Cavani",
+								"number": 9,
+								"pos": "F"
+							},
+							{
+								"team_id": 85,
+								"player_id": 276,
+								"player": "Neymar",
+								"number": 10,
+								"pos": "F"
+							}
+						],
+						"coach": "T. Tuchel"
+					}
+				},
+				"statistics": {
+					"Shots on Goal": {
+						"home": "12",
+						"away": "4"
+					},
+					"Shots off Goal": {
+						"home": "10",
+						"away": "4"
+					},
+					"Total Shots": {
+						"home": "27",
+						"away": "13"
+					},
+					"Blocked Shots": {
+						"home": "5",
+						"away": "5"
+					},
+					"Shots insidebox": {
+						"home": "17",
+						"away": "7"
+					},
+					"Shots outsidebox": {
+						"home": "10",
+						"away": "6"
+					},
+					"Fouls": {
+						"home": "14",
+						"away": "8"
+					},
+					"Corner Kicks": {
+						"home": "9",
+						"away": "5"
+					},
+					"Offsides": {
+						"home": "0",
+						"away": "2"
+					},
+					"Ball Possession": {
+						"home": "53%",
+						"away": "47%"
+					},
+					"Yellow Cards": {
+						"home": "1",
+						"away": "1"
+					},
+					"Red Cards": {
+						"home": null,
+						"away": null
+					},
+					"Goalkeeper Saves": {
+						"home": "2",
+						"away": "10"
+					},
+					"Total passes": {
+						"home": "658",
+						"away": "582"
+					},
+					"Passes accurate": {
+						"home": "601",
+						"away": "508"
+					},
+					"Passes %": {
+						"home": null,
+						"away": null
+					}
+				},
+				"players": [
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 730,
+						"player_name": "Thibaut Courtois",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 13,
+						"position": "G",
+						"rating": "6.3",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 2,
+							"assists": 0
+						},
+						"passes": {
+							"total": 13,
+							"key": 0,
+							"accuracy": 72
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 733,
+						"player_name": "Daniel Carvajal",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 2,
+						"position": "D",
+						"rating": "7.2",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 3,
+							"on": 3
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 47,
+							"key": 0,
+							"accuracy": 83
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 1,
+							"interceptions": 3
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 1,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 742,
+						"player_name": "Raphau00ebl Varane",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 5,
+						"position": "D",
+						"rating": "6.6",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 2,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 44,
+							"key": 0,
+							"accuracy": 95
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 2
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 738,
+						"player_name": "Sergio Ramos",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 4,
+						"position": "D",
+						"rating": "7.2",
+						"minutes_played": 95,
+						"captain": "True",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 54,
+							"key": 0,
+							"accuracy": 94
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 4,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 2
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 743,
+						"player_name": "Marcelo",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 12,
+						"position": "D",
+						"rating": "7.9",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 5,
+							"on": 2
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 1
+						},
+						"passes": {
+							"total": 58,
+							"key": 3,
+							"accuracy": 92
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 2
+						},
+						"cards": {
+							"yellow": 1,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 756,
+						"player_name": "Federico Valverde",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 15,
+						"position": "M",
+						"rating": "7.5",
+						"minutes_played": 76,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 41,
+							"key": 2,
+							"accuracy": 89
+						},
+						"tackles": {
+							"total": 3,
+							"blocks": 0,
+							"interceptions": 3
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 4,
+							"success": 3,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 2
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 747,
+						"player_name": "Casemiro",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 14,
+						"position": "M",
+						"rating": "6.9",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 66,
+							"key": 1,
+							"accuracy": 89
+						},
+						"tackles": {
+							"total": 4,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 2
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 4
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 752,
+						"player_name": "Toni Kroos",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 8,
+						"position": "M",
+						"rating": "8.2",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 4,
+							"on": 2
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 101,
+							"key": 7,
+							"accuracy": 98
+						},
+						"tackles": {
+							"total": 3,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 2
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 745,
+						"player_name": "Isco",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 22,
+						"position": "M",
+						"rating": "6.9",
+						"minutes_played": 82,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 3,
+							"on": 1
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 48,
+							"key": 0,
+							"accuracy": 87
+						},
+						"tackles": {
+							"total": 3,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 759,
+						"player_name": "Karim Benzema",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 9,
+						"position": "F",
+						"rating": "8.0",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 5,
+							"on": 4
+						},
+						"goals": {
+							"total": 2,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 55,
+							"key": 2,
+							"accuracy": 91
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 4,
+							"success": 3,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 2296,
+						"player_name": "Eden Hazard",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 7,
+						"position": "F",
+						"rating": "7.0",
+						"minutes_played": 69,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 50,
+							"key": 4,
+							"accuracy": 90
+						},
+						"tackles": {
+							"total": 1,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 7,
+							"success": 4,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 2,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 10009,
+						"player_name": "Rodrygo",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 27,
+						"position": "M",
+						"rating": "5.9",
+						"minutes_played": 13,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 3,
+							"key": 1,
+							"accuracy": 75
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 754,
+						"player_name": "Luka Modriu0107",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 10,
+						"position": "M",
+						"rating": "6.2",
+						"minutes_played": 19,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 13,
+							"key": 0,
+							"accuracy": 100
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 758,
+						"player_name": "Gareth Bale",
+						"team_id": 541,
+						"team_name": "Real Madrid",
+						"number": 11,
+						"position": "F",
+						"rating": "6.6",
+						"minutes_played": 26,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 8,
+							"key": 0,
+							"accuracy": 100
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 2
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 731,
+						"player_name": "Keylor Navas",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 1,
+						"position": "G",
+						"rating": "9.0",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 2,
+							"assists": 0
+						},
+						"passes": {
+							"total": 21,
+							"key": 0,
+							"accuracy": 77
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 1,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 264,
+						"player_name": "Thomas Meunier",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 12,
+						"position": "D",
+						"rating": "7.2",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 35,
+							"key": 0,
+							"accuracy": 85
+						},
+						"tackles": {
+							"total": 4,
+							"blocks": 1,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 2
+						},
+						"cards": {
+							"yellow": 1,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 259,
+						"player_name": "Thiago Silva",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 2,
+						"position": "D",
+						"rating": "7.0",
+						"minutes_played": 95,
+						"captain": "True",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 50,
+							"key": 0,
+							"accuracy": 90
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 1,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 262,
+						"player_name": "Presnel Kimpembe",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 3,
+						"position": "D",
+						"rating": "6.5",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 69,
+							"key": 0,
+							"accuracy": 92
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 258,
+						"player_name": "Juan Bernat",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 14,
+						"position": "D",
+						"rating": "6.9",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 44,
+							"key": 2,
+							"accuracy": 81
+						},
+						"tackles": {
+							"total": 4,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 2
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 2990,
+						"player_name": "Idrissa Gueye",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 27,
+						"position": "M",
+						"rating": "6.3",
+						"minutes_played": 45,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 18,
+							"key": 0,
+							"accuracy": 90
+						},
+						"tackles": {
+							"total": 1,
+							"blocks": 2,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 2,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 3
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 257,
+						"player_name": "Marquinhos",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 5,
+						"position": "M",
+						"rating": "6.6",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 0,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 56,
+							"key": 0,
+							"accuracy": 86
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 1,
+							"interceptions": 2
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 0,
+							"past": 3
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 273,
+						"player_name": "Marco Verratti",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 6,
+						"position": "M",
+						"rating": "7.2",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 1
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 96,
+							"key": 1,
+							"accuracy": 92
+						},
+						"tackles": {
+							"total": 2,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 1,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 3,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 278,
+						"player_name": "Kylian Mbappu00e9",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 7,
+						"position": "F",
+						"rating": "7.3",
+						"minutes_played": 95,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 3,
+							"on": 2
+						},
+						"goals": {
+							"total": 1,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 40,
+							"key": 2,
+							"accuracy": 88
+						},
+						"tackles": {
+							"total": 1,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 3,
+							"success": 2,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 216,
+						"player_name": "Mauro Icardi",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 18,
+						"position": "F",
+						"rating": "5.9",
+						"minutes_played": 75,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 2,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 3,
+							"key": 0,
+							"accuracy": 50
+						},
+						"tackles": {
+							"total": 1,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 266,
+						"player_name": "u00c1ngel Di Maru00eda",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 11,
+						"position": "F",
+						"rating": "7.0",
+						"minutes_played": 75,
+						"captain": "False",
+						"substitute": "False",
+						"offsides": null,
+						"shots": {
+							"total": 2,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 24,
+							"key": 3,
+							"accuracy": 92
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 1
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 2,
+							"success": 1,
+							"past": 1
+						},
+						"fouls": {
+							"drawn": 2,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 267,
+						"player_name": "Julian Draxler",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 23,
+						"position": "M",
+						"rating": "6.3",
+						"minutes_played": 20,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 16,
+							"key": 0,
+							"accuracy": 84
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 1,
+							"success": 1,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 0,
+							"committed": 1
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 2056,
+						"player_name": "Pablo Sarabia",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 19,
+						"position": "M",
+						"rating": "7.5",
+						"minutes_played": 20,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 1
+						},
+						"goals": {
+							"total": 1,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 9,
+							"key": 1,
+							"accuracy": 90
+						},
+						"tackles": {
+							"total": 1,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 0,
+							"success": 0,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					},
+					{
+						"event_id": 240579,
+						"updateAt": 1574827310,
+						"player_id": 276,
+						"player_name": "Neymar",
+						"team_id": 85,
+						"team_name": "Paris Saint Germain",
+						"number": 10,
+						"position": "F",
+						"rating": "6.7",
+						"minutes_played": 50,
+						"captain": "False",
+						"substitute": "True",
+						"offsides": null,
+						"shots": {
+							"total": 1,
+							"on": 0
+						},
+						"goals": {
+							"total": 0,
+							"conceded": 0,
+							"assists": 0
+						},
+						"passes": {
+							"total": 27,
+							"key": 0,
+							"accuracy": 77
+						},
+						"tackles": {
+							"total": 0,
+							"blocks": 0,
+							"interceptions": 0
+						},
+						"duels": {
+							"total": 0,
+							"won": 0
+						},
+						"dribbles": {
+							"attempts": 8,
+							"success": 5,
+							"past": 0
+						},
+						"fouls": {
+							"drawn": 1,
+							"committed": 0
+						},
+						"cards": {
+							"yellow": 0,
+							"red": 0
+						},
+						"penalty": {
+							"won": 0,
+							"commited": 0,
+							"success": 0,
+							"missed": 0,
+							"saved": 0
+						}
+					}
+				]
+			}
+		]
+	}
+}

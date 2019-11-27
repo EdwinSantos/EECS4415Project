@@ -55,8 +55,8 @@ def main():
         match_events, timestamp = get_match_events(fixture_ID)
         print('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
                   neutral_team_hashtag[1:] + " " + timestamp)
-        os.system('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
-                  neutral_team_hashtag[1:] + " " + timestamp)
+        #os.system('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
+         #         neutral_team_hashtag[1:] + " " + timestamp)
     elif mode_id == 2:
         # Trigger analyzer to process tweets that were outputed by the farm
         os.system("python cleanTweets.py")

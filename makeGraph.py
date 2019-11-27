@@ -12,32 +12,44 @@ debugging = False
 
 
 def main():
-    home_team_id = sys.argv[0]
-    away_team_id = sys.argv[1]
-
-    fixture_ID = get_fixtureID(home_team_id, away_team_id)
-    match_events = get_match_events(fixture_ID)
+    match_events = get_match_events(240579)
     twitter_sentiment = get_sentiment()
+    print(twitter_sentiment)
     build_graph(match_events, twitter_sentiment)
 
 def get_sentiment():
-    data = pd.read_csv("sentiment.csv")
+    data = pd.read_csv("Results.csv")
+    return data
 
 
-def build_graph(match_events):
+def build_graph(match_events, twitter_sentiment):
     start_time, end_time, events = handle_events(match_events)
 
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
     ax.set_xlim([start_time, end_time])
+    ax.set_ylim([-8, 3])
     for event in events:
         plt.axvline(event[0])
         print(event[1])
-        plt.text(event[0], 0, event[1], rotation=90)
+        plt.text(event[0], -8, event[1], rotation=90)
+
+    times = twitter_sentiment["EndOfTimeWindow"].values
+    fixtimes = []
+    for time in times:
+        fixtimes.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S'))
+    home = twitter_sentiment["Home Team"].values
+    away = twitter_sentiment["Away team"].values
+    neutral = twitter_sentiment["Neutral"].values
+    print(times)
+    plt.plot(fixtimes, home, '.r-', label="#HalaMadrid")
+    plt.plot(fixtimes, away, '.b-', label="#ICICESTPARIS")
+    plt.plot(fixtimes, neutral, '.g-',label="#RMAPSG")
+    plt.legend(loc="upper left")
+
     plt.xlabel("Time")
     plt.ylabel("Sentiment")
     plt.show()
-    plt.savefig("Graph")
 
     # Add events here
 
@@ -101,14 +113,15 @@ def get_fixtureID(home_team_id, away_team_id):
 
 def get_match_events(fixture_ID):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/" + str(fixture_ID)
-    print(debugging)
-    if debugging:
-        with open("MatchEvents.json", encoding="utf8") as json_file:
-            json_response = json.load(json_file)
-    else:
-        response = query_api(url)
-        json_response = json.load(response.read())
+    #response = query_api(url)
+    #json_response = json.loads(response)
+    #with open('data.json', 'w') as f:
+    #    json.dump(response, f)
 
+    with open('data.json', 'r') as myfile:
+        data = myfile.read()
+    json_response = json.loads(data)
+    print(type(json_response))
     match_events = json.dumps(json_response["api"]["fixtures"][0])
     return match_events
 
