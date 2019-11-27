@@ -61,6 +61,12 @@ for index, row in islice(dataframe_list[2].iterrows(), 0, None):
 
     single_survey_sentiment_df3 = pd.DataFrame([new_entry3], columns=COLS)
     df3 = df3.append(single_survey_sentiment_df3, ignore_index=True)
+    
+initial_timestamp = df['date'].iloc[0]
+print(initial_timestamp)
+for i in df:
+    
+
 
 COL = ['EndOfTimeWindow', 'Home Team Sentiment', 'Away team', 'Neutral']
 final_df = pd.DataFrame(columns=COL)
@@ -75,20 +81,8 @@ new_entry4 += ['timestamp'+str(+ 300), sent_df, sent_df2, sent_df3]
 final = pd.DataFrame([new_entry4], columns=COL)
 final_df = final_df.append(final, ignore_index=True)
 print(df)
-final_df.to_csv(r'C:\Users\AmirY\PycharmProjects\bigdata\b\SentimentValues.csv', mode='w', columns=COL, index=False, encoding="utf-8")
+final_df.to_csv(r'C:\Users\AmirYounesi\PycharmProjects\bigdata\b\SentimentValues.csv', mode='w', columns=COL, index=False, encoding="utf-8")
 
 
 
 ## calculate the mean of polarity across all the tweets
-
-
-
-
-
-
-## might use later
-##hash_tag_retrieval = data.iloc[:, -1]
-##hash_tag_retrieval = hash_tag_retrieval.to_string()
-##group = re.findall(r"#(\w+)", hash_tag_retrieval)
-
-##dictHashTags = dict.fromkeys(group, )
