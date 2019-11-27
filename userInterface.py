@@ -2,9 +2,7 @@
 
 import json
 import os
-from datetime import datetime
-import matplotlib.pyplot as plt
-import pandas as pd
+
 import requests
 
 league_id = 524
@@ -53,7 +51,7 @@ def main():
             away_team_hashtag = "#Crystal_Palace"
             neutral_team_hashtag = "#CheVSCry"
         # pass hashtags to twitter class that will take care of getting the tweets
-        fixture_ID = get_fixtureID(home_team_id, away_team_id)
+        fixture_ID = get_fixtureID(home_team_id, away_team_id, league_id)
         match_events, timestamp = get_match_events(fixture_ID)
         print('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
                   neutral_team_hashtag[1:] + " " + timestamp)
@@ -79,21 +77,24 @@ def get_teams(league_id):
         teams[team["name"]] = team["team_id"]
     return teams
 
-def get_fixtureID(home_team_id, away_team_id):
+def get_fixtureID(home_team_id, away_team_id, league_id):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/" + str(home_team_id) + "/" + str(league_id)
 
     # Real code
     # response = query_api(url)
     # json_response = json.load(response)
 
-    # Debug code
-    with open("fixtureID.json", encoding="utf8") as json_file:
-        json_response = json.load(json_file)
+    if debugging:
+        with open("fixtureID.json", encoding="utf8") as json_file:
+            json_response = json.load(json_file)
+    else:
+        response = query_api(url)
+        json_response = json.load(response)
 
     for fixture in json_response["api"]["fixtures"]:
         targetFixture_id = 0
         if (fixture["homeTeam"]["team_id"] == home_team_id and fixture["awayTeam"]["team_id"] == away_team_id and
-                fixture["league_id"] == 524 and fixture["status"] == "Match Finished"):
+                fixture["league_id"] == league_id and fixture["status"] == "Match Finished"):
             targetFixture_id = fixture["fixture_id"]
             break
         # Error catching stuff should go here.
