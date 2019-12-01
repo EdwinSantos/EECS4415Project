@@ -12,7 +12,7 @@ debugging = False
 
 
 def main():
-    match_events = get_match_events(240579)
+    match_events = get_match_events(240584)
     twitter_sentiment = get_sentiment()
     print(twitter_sentiment)
     build_graph(match_events, twitter_sentiment)
@@ -28,11 +28,11 @@ def build_graph(match_events, twitter_sentiment):
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
     ax.set_xlim([start_time, end_time])
-    ax.set_ylim([-8, 3])
+    ax.set_ylim([-2, 4])
     for event in events:
         plt.axvline(event[0])
         print(event[1])
-        plt.text(event[0], -8, event[1], rotation=90)
+        plt.text(event[0], -2, event[1], rotation=90)
 
     times = twitter_sentiment["EndOfTimeWindow"].values
     fixtimes = []
@@ -42,9 +42,9 @@ def build_graph(match_events, twitter_sentiment):
     away = twitter_sentiment["Away team"].values
     neutral = twitter_sentiment["Neutral"].values
     print(times)
-    plt.plot(fixtimes, home, '.r-', label="#HalaMadrid")
-    plt.plot(fixtimes, away, '.b-', label="#ICICESTPARIS")
-    plt.plot(fixtimes, neutral, '.g-',label="#RMAPSG")
+    plt.plot(fixtimes, home, '.r-', label="#JuveUCL")
+    plt.plot(fixtimes, away, '.b-', label="#AupaAtleti")
+    plt.plot(fixtimes, neutral, '.g-',label="#JuveAtleti")
     plt.legend(loc="upper left")
 
     plt.xlabel("Time")
@@ -79,6 +79,8 @@ def handle_events(match_events):
 
     for event in json_events["events"]:
         game_time = event["elapsed"]
+        if event["type"] == "subst":
+            continue
         detail = str(game_time) + " " + event["detail"] + " " + event["player"] + " (" + event["teamName"] + ")"
 
         if game_time >= 45:
@@ -113,15 +115,15 @@ def get_fixtureID(home_team_id, away_team_id):
 
 def get_match_events(fixture_ID):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/" + str(fixture_ID)
-    #response = query_api(url)
-    #json_response = json.loads(response)
-    #with open('data.json', 'w') as f:
-    #    json.dump(response, f)
+    response = query_api(url)
+    json_response = json.loads(response)
+    with open('data.json', 'w') as f:
+        json.dump(response, f)
 
-    with open('data.json', 'r') as myfile:
-        data = myfile.read()
-    json_response = json.loads(data)
-    print(type(json_response))
+    #with open('data.json', 'r') as myfile:
+    #    data = myfile.read()
+    #json_response = json.loads(data)
+    #print(type(json_response))
     match_events = json.dumps(json_response["api"]["fixtures"][0])
     return match_events
 

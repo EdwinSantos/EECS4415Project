@@ -20,9 +20,9 @@ sia = SIA()
 def main():
     hashtagtypes = ["Home", "Away", "Neutral"]
     # Read files one at a time into dataframes
-    home_df = pd.read_csv(os.path.join("csv", "Home-HalaMadrid.csv"))
-    away_df = pd.read_csv(os.path.join("csv", "Away-ICICESTPARIS.csv"))
-    neutral_df = pd.read_csv(os.path.join("csv", "Neutral-RMAPSG.csv"))
+    home_df = pd.read_csv(os.path.join("csv", "Home-JuveUCL.csv"))
+    away_df = pd.read_csv(os.path.join("csv", "Away-AupaAtleti.csv"))
+    neutral_df = pd.read_csv(os.path.join("csv", "Neutral-JuveAtleti.csv"))
     home_results = process_dfs(home_df)
     away_results = process_dfs(away_df)
     neutral_results = process_dfs(neutral_df)

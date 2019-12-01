@@ -1,6 +1,3 @@
-#HalaMadrid
-#ICICESTPARIS
-#RMAPSG
-#JuveUCL
-#AúpaAtleti
-#JuveAtleti
+#OMETAG
+#WAYTAG
+#SCNEW
