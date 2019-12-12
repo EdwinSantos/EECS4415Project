@@ -3,7 +3,6 @@
 import json
 import os
 import requests
-import twitter
 
 leagues = {
     "Champions League": 530,
@@ -64,7 +63,8 @@ def main():
             neutral_team_hashtag = "#CheVSCry"
             # get the timestamp and match events
 
-        twitter.build_query(matches)
+        from twitter import Twitter
+        Twitter(matches)
         # pass hashtags to twitter class that will take care of getting the tweets
         #print('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
         #      neutral_team_hashtag[1:] + " " + timestamp)
