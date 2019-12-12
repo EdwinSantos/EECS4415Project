@@ -61,20 +61,15 @@ def main():
             home_team_hashtag = "#Chelsea"
             away_team_hashtag = "#Crystal_Palace"
             neutral_team_hashtag = "#CheVSCry"
-            # get the timestamp and match events
-
+            timestamp = 1573302600
+            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp])
         from twitter import Twitter
         Twitter(matches)
-        # pass hashtags to twitter class that will take care of getting the tweets
-        #print('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
-        #      neutral_team_hashtag[1:] + " " + timestamp)
-        #os.system('python twitter.py ' + home_team_hashtag[1:] + " " + away_team_hashtag[1:] + " " +
-        #          neutral_team_hashtag[1:] + " " + timestamp)
     elif mode_id == 2:
         # Trigger analyzer to process tweets that were outputed by the farm
-        os.system("python cleanTweets.py")
+        import cleanTweets
     elif mode_id == 3:
-        os.system("python makeGraph.py")
+        import makeGraph
 
 
 def get_teams(league_id):

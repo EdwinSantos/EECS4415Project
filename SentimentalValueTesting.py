@@ -12,17 +12,29 @@ from datetime import datetime
 nltk.download('vader_lexicon')
 COL = ['EndOfTimeWindow', 'Home Team', 'Away team', 'Neutral']
 
-starttime = 1574798400
-endtime = (1574798400 + 7200)
-sia = SIA()
+starttime = 0
+endtime = 0
+sia = SIA(
 
 
 def main():
     hashtagtypes = ["Home", "Away", "Neutral"]
+    match_info = get_info_from_files()
+    for match in matches:
+        build_graph(match)
+
+
+def build_graph(match):
     # Read files one at a time into dataframes
-    home_df = pd.read_csv(os.path.join("csv", "Home-JuveUCL.csv"))
-    away_df = pd.read_csv(os.path.join("csv", "Away-AupaAtleti.csv"))
-    neutral_df = pd.read_csv(os.path.join("csv", "Neutral-JuveAtleti.csv"))
+    # home_df = pd.read_csv(os.path.join("csv", "Home-JuveUCL.csv"))
+    home_df = match.hometag
+    #away_df = pd.read_csv(os.path.join("csv", "Away-AupaAtleti.csv"))
+    away_df = match.awaytag
+    neutral_df = match.neurtraltag
+    #neutral_df = pd.read_csv(os.path.join("csv", "Neutral-JuveAtleti.csv"))
+
+    starttime = match.starttime
+    endtime = match.endtime 
     home_results = process_dfs(home_df)
     away_results = process_dfs(away_df)
     neutral_results = process_dfs(neutral_df)
@@ -36,6 +48,11 @@ def main():
 
     print(output_df)
 
+
+def get_info_from_files():
+    #Go to [fileName] to get the name of the folder that im looking for + names of the files that im looking for
+    #From that get the timestamp, hashtag and sentiment values and process them
+    return x
 
 # Process dataframe to get sentiment value
 def process_dfs(home_df):
