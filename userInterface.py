@@ -49,7 +49,7 @@ def main():
                 neutral_team_hashtag = input("Enter neutral hashtag with #: ")
                 fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
                 save_match_events(fixture_ID)
-                matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp])
+                matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp, False])
                 nextMatch = (input("Add another match? (Y/N): ") == "Y")
                 if not nextMatch:
                     break
@@ -58,13 +58,19 @@ def main():
             league_id = 524
             home_team_id = 49
             away_team_id = 52
-            home_team_hashtag = "#Chelsea"
-            away_team_hashtag = "#Crystal_Palace"
+            home_team_hashtag = "#freecodefridaycontest"
+            away_team_hashtag = "#UnwrapLive"
             neutral_team_hashtag = "#CheVSCry"
             timestamp = 1573302600
-            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp])
-        from twitter import Twitter
-        Twitter(matches)
+            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp, True])
+        
+        #from twitter import Starter
+        #Starter(matches)
+
+        import twitter
+        twitter.main(matches)
+        #from twitter import Twitter
+        #Twitter(matches)
     elif mode_id == 2:
         # Trigger analyzer to process tweets that were outputed by the farm
         import cleanTweets
