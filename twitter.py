@@ -61,6 +61,8 @@ class listener(StreamListener):
 
         string = str(timestamp) + "\t" + tweet + "\t" + tag
         neutral_tag = self.get_neutral_tag(tag)
+        if neutral_tag == "":
+            return True
         file_path = neutral_tag + "/" + neutral_tag + "-" + str(self.last_timestamp) + ".json"
 
         if (time.time() - self.t <= 300):
@@ -140,10 +142,15 @@ for lst in ht:
     tracking.append(lst[2])
 
 # make list of [[neutrals, timestamp], [...]]
-i = 2
-while i <= len(matches):
-    neutral_tags.append([ht[i], ht[i + 1]])
-    i += 3
+for t in ht:
+    neutral_tags.append(t[2])
+
+print(neutral_tags)
+
+# i = 1
+# while i <= len(matches):
+#     neutral_tags.append([ht[i], ht[i + 1]])
+#     i += 3
 
 # write hashtags to file
 #with open("hashtags.txt", "w+") as fs:
@@ -157,8 +164,8 @@ while i <= len(matches):
 
 # make neutrals directory
 for tag in neutral_tags:
-    if not os.path.exists(tag[0]):
-        os.makedirs(tag[0])
+    if not os.path.exists(tag):
+        os.makedirs(tag)
 
 # class Twitter(object):
 #     ckey = ""
