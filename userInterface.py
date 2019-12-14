@@ -10,72 +10,64 @@ leagues = {
     "Championship": 565
 }
 
-modes = {
-    "Tweet Farming": 1,
-    "Tweet Analyzing": 2,
-    "Creating Graph": 3
-}
-
 debugging = False
 
 
 def main():
     global debugging
     debugging = (input("Running in debug mode (Y/N): ") == "Y")
-    for mode in modes:
-        print(repr(mode), ":", modes[mode])
-    mode_id = int(input("What mode are you running in: "))
-
     matches = []
-    if mode_id == 1:
-        if not debugging:
-            while True:
-                # Print out list of leagues that can be chosen from. This list can be expanded but it should not be
-                # expanded beyond leagues in primarily english speaking countries.
-                for league in leagues:
-                    print(repr(league), ":", leagues[league])
-                league_id = int(input("Enter league ID: "))
-                # Get all the teams in that league from the API and let the user pick what teams they are going to use
-                teams = get_teams(league_id)
-                for team in teams:
-                    print(team, ":", teams[team])
-                # get teams in that league
-                home_team_id = int(input("Enter home team number: "))
-                away_team_id = int(input("Enter away team number: "))
-                # Prompt the user to enter the hashtags that are used. The last tag can be generated automatically
-                # but it is not reliable
-                home_team_hashtag = input("Enter home team hashtag with #: ")
-                away_team_hashtag = input("Enter away team hashtag with #: ")
-                neutral_team_hashtag = input("Enter neutral hashtag with #: ")
-                fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
-                save_match_events(fixture_ID)
-                matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp, False])
-                nextMatch = (input("Add another match? (Y/N): ") == "Y")
-                if not nextMatch:
-                    break
-        else:
-            # Values used in debugging mode
-            league_id = 524
-            home_team_id = 49
-            away_team_id = 52
-            home_team_hashtag = "#freecodefridaycontest"
-            away_team_hashtag = "#UnwrapLive"
-            neutral_team_hashtag = "#CheVSCry"
-            timestamp = 1573302600
-            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp, True])
-        
-        #from twitter import Starter
-        #Starter(matches)
+    if not debugging:
+        while True:
+            # Print out list of leagues that can be chosen from. This list can be expanded but it should not be
+            # expanded beyond leagues in primarily english speaking countries.
+            for league in leagues:
+                print(repr(league), ":", leagues[league])
+            league_id = int(input("Enter league ID: "))
+            # Get all the teams in that league from the API and let the user pick what teams they are going to use
+            teams = get_teams(league_id)
+            for team in teams:
+                print(team, ":", teams[team])
+            # get teams in that league
+            home_team_id = int(input("Enter home team number: "))
+            away_team_id = int(input("Enter away team number: "))
+            # Prompt the user to enter the hashtags that are used. The last tag can be generated automatically
+            # but it is not reliable
+            home_team_hashtag = input("Enter home team hashtag with #: ")
+            away_team_hashtag = input("Enter away team hashtag with #: ")
+            neutral_team_hashtag = input("Enter neutral hashtag with #: ")
+            fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
+            save_match_events(fixture_ID)
+            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp,
+                            fixture_ID, False])
+            nextMatch = (input("Add another match? (Y/N): ") == "Y")
+            if not nextMatch:
+                break
+    else:
+        # Values used in debugging mode
+        league_id = 524
+        home_team_id = 49
+        away_team_id = 52
+        home_team_hashtag = "#freecodefridaycontest"
+        away_team_hashtag = "#UnwrapLive"
+        neutral_team_hashtag = "#CheVSCry"
+        fixture_ID = 157126
+        timestamp = 1573302600
+        matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp, fixture_ID,
+                        False])
+    print(matches)
+    matches_json = json.dumps(matches)
+    print("Ran Twitter")
+    os.system('python twitter.py ' + matches_json)
+    print("Ran to CSV")
+    # Trigger analyzer to process tweets that were outputed by the farm
+    os.system("python toCSV.py " + matches_json)
 
-        import twitter
-        twitter.main(matches)
-        #from twitter import Twitter
-        #Twitter(matches)
-    elif mode_id == 2:
-        # Trigger analyzer to process tweets that were outputed by the farm
-        import cleanTweets
-    elif mode_id == 3:
-        import makeGraph
+    # Trigger analyzer to process tweets that were outputed by the farm
+    os.system("python SentimentalValueTesting.py " + matches_json)
+
+    os.system("python makeGraph.py " + matches_json)
+
 
 
 def get_teams(league_id):
