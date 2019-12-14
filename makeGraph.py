@@ -12,17 +12,27 @@ debugging = False
 
 
 def main():
-    match_events = get_match_events(240584)
-    twitter_sentiment = get_sentiment()
-    print(twitter_sentiment)
-    build_graph(match_events, twitter_sentiment)
+    matches = sys.argv[1]
+    # Go over all the matches that are passed
+    for match in matches:
+        hometag = match[0]
+        awaytag = match[1]
+        neutraltag = match[2]
+        timestamp = match[3]
+        fixtureID = match[4]
+        match_events = get_match_events(fixtureID)
+        # Pass whatever detail you need to get the results file
+        twitter_sentiment = get_sentiment(fixtureID)
+        print(twitter_sentiment)
+        build_graph(match_events, twitter_sentiment, match)
 
-def get_sentiment():
-    data = pd.read_csv("Results.csv")
+
+def get_sentiment(fixtureID):
+    data = pd.read_csv(os.path.join(neutraltag, fixtureID + ".csv"))
     return data
 
 
-def build_graph(match_events, twitter_sentiment):
+def build_graph(match_events, twitter_sentiment, match):
     start_time, end_time, events = handle_events(match_events)
 
     fig, ax = plt.subplots()
@@ -42,23 +52,21 @@ def build_graph(match_events, twitter_sentiment):
     away = twitter_sentiment["Away team"].values
     neutral = twitter_sentiment["Neutral"].values
     print(times)
-    plt.plot(fixtimes, home, '.r-', label="#JuveUCL")
-    plt.plot(fixtimes, away, '.b-', label="#AupaAtleti")
-    plt.plot(fixtimes, neutral, '.g-',label="#JuveAtleti")
+    plt.plot(fixtimes, home, '.r-', label=match[0])
+    plt.plot(fixtimes, away, '.b-', label=match[1])
+    plt.plot(fixtimes, neutral, '.g-', label=match[2])
     plt.legend(loc="upper left")
 
     plt.xlabel("Time")
     plt.ylabel("Sentiment")
-    plt.show()
-
-    # Add events here
+    plt.save()
 
 
 def handle_events(match_events):
     all_events = []
     json_events = json.loads(match_events)
-    event_df = pd.DataFrame()
 
+    # Create extra events that aren't provided
     # Start time = start_time - extra coverage
     graph_start_time_unix = json_events["firstHalfStart"] - 900
     graph_start_time = datetime.fromtimestamp(graph_start_time_unix)
@@ -79,6 +87,7 @@ def handle_events(match_events):
 
     for event in json_events["events"]:
         game_time = event["elapsed"]
+        # Get rid of subsitutions because it creates too many events
         if event["type"] == "subst":
             continue
         detail = str(game_time) + " " + event["detail"] + " " + event["player"] + " (" + event["teamName"] + ")"
@@ -92,55 +101,12 @@ def handle_events(match_events):
     return graph_start_time, graph_end_time, all_events
 
 
-def get_fixtureID(home_team_id, away_team_id):
-    url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/" + str(home_team_id) + "/" + str(league_id)
-
-    # Real code
-    # response = query_api(url)
-    # json_response = json.load(response)
-
-    # Debug code
-    with open("fixtureID.json", encoding="utf8") as json_file:
-        json_response = json.load(json_file)
-
-    for fixture in json_response["api"]["fixtures"]:
-        targetFixture_id = 0
-        if (fixture["homeTeam"]["team_id"] == home_team_id and fixture["awayTeam"]["team_id"] == away_team_id and
-                fixture["league_id"] == 524 and fixture["status"] == "Match Finished"):
-            targetFixture_id = fixture["fixture_id"]
-            break
-        # Error catching stuff should go here.
-    return targetFixture_id
-
-
 def get_match_events(fixture_ID):
-    url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/" + str(fixture_ID)
-    response = query_api(url)
-    json_response = json.loads(response)
-    with open('data.json', 'w') as f:
-        json.dump(response, f)
-
-    #with open('data.json', 'r') as myfile:
-    #    data = myfile.read()
-    #json_response = json.loads(data)
-    #print(type(json_response))
+    with open(str(fixture_ID) + '.json', 'r') as match_events:
+        match_events = myfile.read()
+    json_response = json.loads(match_events)
     match_events = json.dumps(json_response["api"]["fixtures"][0])
     return match_events
 
-
-def query_api(url):
-    querystring = {"timezone": "Europe/London"}
-
-    headers = {
-        'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
-        'x-rapidapi-key': get_key()
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    return response.text
-
-
-def get_key():
-    file = open("key.txt", "r")
-    return file.read()
 
 if __name__ == "__main__": main()

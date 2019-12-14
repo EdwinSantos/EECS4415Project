@@ -14,45 +14,43 @@ COL = ['EndOfTimeWindow', 'Home Team', 'Away team', 'Neutral']
 
 starttime = 0
 endtime = 0
-sia = SIA(
+sia = SIA()
 
 
 def main():
     hashtagtypes = ["Home", "Away", "Neutral"]
-    match_info = get_info_from_files()
+    matches = sys.argv[1]
+    global starttime
+    global endtime
     for match in matches:
-        build_graph(match)
+        starttime = match[3]
+        endtime = starttime + 7200
+        build_table(match)
 
 
-def build_graph(match):
+def build_table(match):
     # Read files one at a time into dataframes
-    # home_df = pd.read_csv(os.path.join("csv", "Home-JuveUCL.csv"))
-    home_df = match.hometag
-    #away_df = pd.read_csv(os.path.join("csv", "Away-AupaAtleti.csv"))
-    away_df = match.awaytag
-    neutral_df = match.neurtraltag
-    #neutral_df = pd.read_csv(os.path.join("csv", "Neutral-JuveAtleti.csv"))
+    neutraltag = match[2]
+    neutral_df = pd.read_csv(os.path.join(neutraltag, neutraltag + ".csv"))
+    hometag = match[0]
+    home_df = pd.read_csv(os.path.join(neutraltag, hometag + ".csv"))
+    awaytag = match[1]
+    away_df = pd.read_csv(os.path.join(neutraltag, awaytag + ".csv"))
 
-    starttime = match.starttime
-    endtime = match.endtime 
     home_results = process_dfs(home_df)
     away_results = process_dfs(away_df)
     neutral_results = process_dfs(neutral_df)
     home_df = pd.DataFrame(home_results)
     away_df = pd.DataFrame(away_results)
     neutral_df = pd.DataFrame(neutral_results)
+
     test = pd.merge(home_df, away_df, on=0)
     output_df = pd.merge(test, neutral_df, on=0)
     output_df.columns = COL
-    output_df.to_csv("Results.csv", index=False)
-
+    fixtureID = match[4]
+    output_df.to_csv(os.path.join(neutraltag, fixtureID + ".csv"), index=False)
     print(output_df)
 
-
-def get_info_from_files():
-    #Go to [fileName] to get the name of the folder that im looking for + names of the files that im looking for
-    #From that get the timestamp, hashtag and sentiment values and process them
-    return x
 
 # Process dataframe to get sentiment value
 def process_dfs(home_df):
