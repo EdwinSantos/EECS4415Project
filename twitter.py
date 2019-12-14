@@ -44,7 +44,7 @@ class listener(StreamListener):
             timestamp = timestamp - 18000 # unix -> windows epoch conversion
 
         if self.last_timestamp == 0:
-            self.last_timestamp = timestamp
+            self.last_timestamp = self.t
 
         tags = []
         tag = ''
@@ -94,18 +94,18 @@ class listener(StreamListener):
         return epoch
 
     def get_tag(self, tt):
+        result = ""
         for tags in ht:
             if tt in tags:
-                return tt
-            else:
-                return ""
+                result = tt
+        return result
 
     def get_neutral_tag(self, tg):
+        result = ""
         for tags in ht:
             if tg in tags:
-                return tags[2]
-            else:
-                return ""
+                result = tags[2]
+        return result
 
 # end of game in seconds
 END_TIME = 7200

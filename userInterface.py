@@ -38,7 +38,7 @@ def main():
             neutral_team_hashtag = input("Enter neutral hashtag with #: ")
             fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
             save_match_events(fixture_ID)
-            matches.append([home_team_hashtag[1:], away_team_hashtag[1:], neutral_team_hashtag[1:], timestamp,
+            matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" + neutral_team_hashtag[1:] + "\"", timestamp,
                             fixture_ID, False])
             nextMatch = (input("Add another match? (Y/N): ") == "Y")
             if not nextMatch:
