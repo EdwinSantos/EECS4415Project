@@ -12,7 +12,9 @@ from tweepy import StreamListener
 
 class listener(StreamListener):
     # start time
-    start_time, t = time.time()
+    start_time = time.time()
+    t = time.time()
+    last_timestamp = 0
 
     def on_data(self, data):
         if (time.time() - self.start_time >= END_TIME): # end listener
@@ -20,8 +22,6 @@ class listener(StreamListener):
         all_data = json.loads(data)
         #if not all_data["lang"] == "en":
         #    return True
-        
-        last_timestamp = 0
         if all_data['retweeted'] or 'RT @' in all_data['text']:
             return True # pass
 
@@ -43,8 +43,8 @@ class listener(StreamListener):
         if windows:
             timestamp = timestamp - 18000 # unix -> windows epoch conversion
 
-        if last_timestamp == 0:
-            last_timestamp = timestamp
+        if self.last_timestamp == 0:
+            self.last_timestamp = timestamp
 
         tags = []
         tag = ''
@@ -61,7 +61,7 @@ class listener(StreamListener):
 
         string = str(timestamp) + "\t" + tweet + "\t" + tag
         neutral_tag = self.get_neutral_tag(tag)
-        file_path = neutral_tag + "/" + neutral_tag + "-" + str(last_timestamp) + ".json"
+        file_path = neutral_tag + "/" + neutral_tag + "-" + str(self.last_timestamp) + ".json"
 
         if (time.time() - self.t <= 300):
             with open(file_path, "a+", encoding='utf-16') as fs:
@@ -72,8 +72,8 @@ class listener(StreamListener):
 
         elif (time.time() - self.t > 300):
             self.t = time.time()
-            last_timestamp = self.t
-            file_path = neutral_tag + "/" + neutral_tag + "-" + str(last_timestamp) + ".json"
+            self.last_timestamp = self.t
+            file_path = neutral_tag + "/" + neutral_tag + "-" + str(self.last_timestamp) + ".json"
             with open(file_path, "a+", encoding='utf-16') as fs:
                 fs.write(json.dumps(string))
                 fs.write("\n")
