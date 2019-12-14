@@ -48,11 +48,11 @@ def main():
         league_id = 524
         home_team_id = 49
         away_team_id = 52
-        home_team_hashtag = "#freecodefridaycontest"
-        away_team_hashtag = "#UnwrapLive"
-        neutral_team_hashtag = "#CheVSCry"
+        home_team_hashtag = "#FineLineLive"
+        away_team_hashtag = "#JoeBobsRedChristmas"
+        neutral_team_hashtag = "#BTSwins10s"
         fixture_ID = 157126
-        timestamp = 1573302600
+        timestamp = 1576309287
         matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" +
                         neutral_team_hashtag[1:]+ "\"" , timestamp, fixture_ID, False])
     print(matches)

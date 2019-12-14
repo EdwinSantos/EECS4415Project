@@ -112,6 +112,7 @@ END_TIME = 7200
 windows = True if "win" in sys.platform else False
 
 # format: [[Hometag, Awaytag, Neutraltag, Timestamp, ...], [...]]
+print(sys.argv[1])
 matches = json.loads(sys.argv[1])
 tracking = []
 ht = []
@@ -145,14 +146,14 @@ while i <= len(matches):
     i += 3
 
 # write hashtags to file
-with open("hashtags.txt", "w+") as fs:
-    for tag in ht:
-        fs.write(tag + "\n")
+#with open("hashtags.txt", "w+") as fs:
+#    for tag in ht:
+#        fs.write(tag + "\n")
 
 # write neutral hashtags to file
-with open("nt_hashtags.txt", "w+") as fs:
-    for tag in neutral_tags:
-        fs.write(tag + "\n")
+#with open("nt_hashtags.txt", "w+") as fs:
+#    for tag in neutral_tags:
+#        fs.write(tag + "\n")
 
 # make neutrals directory
 for tag in neutral_tags:
