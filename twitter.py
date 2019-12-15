@@ -11,7 +11,6 @@ from tweepy import Stream
 from tweepy import StreamListener
 
 class listener(StreamListener):
-    # start time
     start_time = time.time()
     t = time.time()
     last_timestamp = 0
@@ -20,10 +19,8 @@ class listener(StreamListener):
         if (time.time() - self.start_time >= END_TIME): # end listener
             return False
         all_data = json.loads(data)
-        #if not all_data["lang"] == "en":
-        #    return True
         if all_data['retweeted'] or 'RT @' in all_data['text']:
-            return True # pass
+            return True # pass any retweets
 
         if "extended_tweet" in all_data:
             if "full_text" in all_data["extended_tweet"]:

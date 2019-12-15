@@ -57,12 +57,12 @@ def main():
                         neutral_team_hashtag[1:]+ "\"" , timestamp, fixture_ID, False])
     print(matches)
     matches_json = json.dumps(matches)
-    print('python twitter.py ' + "\"" + matches_json + "\"")
-    print("Ran Twitter")
-    os.system('python twitter.py ' + "\"" + matches_json + "\"")
-    #print("Ran to CSV")
+    # print('python twitter.py ' + "\"" + matches_json + "\"")
+    # print("Ran Twitter")
+    # os.system('python twitter.py ' + "\"" + matches_json + "\"")
+    # print("Ran to CSV")
     # Trigger analyzer to process tweets that were outputed by the farm
-    #os.system("python toCSV.py " + "'" + matches_json + "'")
+    # os.system("python toCSV.py " + "\"" + matches_json + "\"")
 
     # Trigger analyzer to process tweets that were outputed by the farm
     #os.system("python SentimentalValueTesting.py " + matches_json)

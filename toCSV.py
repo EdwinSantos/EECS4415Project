@@ -31,7 +31,7 @@ for game in matches:
 
 # Iterate through each match folder, reading all files and organizing them by hashtags
 for match in ht:
-    os.chdir('#' + match[2])
+    os.chdir(match[2])
 
     with suppress(Exception):
         with open('tweets.csv', 'a+', newline ='') as csvfile:
@@ -50,17 +50,17 @@ for match in ht:
                         writer.writerow(line)
 
     df = pd.read_csv('tweets.csv')
-    home = df[['timestamp','text','hashtags']].loc[df['hashtags'] == '#' + match[0]]
-    neutral = df[['timestamp','text','hashtags']].loc[df['hashtags'] == '#' + match[2]]
-    away = df[['timestamp','text','hashtags']].loc[df['hashtags'] == '#' + match[1]]
+    home = df[['timestamp','text','hashtags']].loc[df['hashtags'] == match[0]]
+    neutral = df[['timestamp','text','hashtags']].loc[df['hashtags'] == match[2]]
+    away = df[['timestamp','text','hashtags']].loc[df['hashtags'] == match[1]]
 
     # export_csv1 = home.to_csv('home.csv', index=False)
     # export_csv2 = neutral.to_csv('neutral.csv', index=False)
     # export_csv3 = away.to_csv('away.csv', index=False)
 
-    export_csv1 = home.to_csv('#' + match[0] + '.csv', index=False)
-    export_csv2 = neutral.to_csv('#' + match[2] + '.csv', index=False)
-    export_csv3 = away.to_csv('#' + match[1] + '.csv', index=False)
+    export_csv1 = home.to_csv(match[0] + '.csv', index=False)
+    export_csv2 = neutral.to_csv(match[2] + '.csv', index=False)
+    export_csv3 = away.to_csv(match[1] + '.csv', index=False)
 
     os.chdir('..')
 
