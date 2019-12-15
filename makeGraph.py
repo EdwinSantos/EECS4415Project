@@ -7,13 +7,16 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
+import json
 
 debugging = False
 
+neutraltag = ""
 
 def main():
-    matches = sys.argv[1]
+    matches = json.loads(sys.argv[1])
     # Go over all the matches that are passed
+    global neutraltag
     for match in matches:
         hometag = match[0]
         awaytag = match[1]
@@ -28,7 +31,7 @@ def main():
 
 
 def get_sentiment(fixtureID):
-    data = pd.read_csv(os.path.join(neutraltag, fixtureID + ".csv"))
+    data = pd.read_csv(os.path.join("#" + neutraltag, str(fixtureID) + ".csv"))
     return data
 
 
@@ -38,11 +41,11 @@ def build_graph(match_events, twitter_sentiment, match):
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
     ax.set_xlim([start_time, end_time])
-    ax.set_ylim([-2, 4])
+    ax.set_ylim([-10, 10])
     for event in events:
         plt.axvline(event[0])
         print(event[1])
-        plt.text(event[0], -2, event[1], rotation=90)
+        plt.text(event[0], -9, event[1], rotation=90)
 
     times = twitter_sentiment["EndOfTimeWindow"].values
     fixtimes = []
@@ -59,7 +62,7 @@ def build_graph(match_events, twitter_sentiment, match):
 
     plt.xlabel("Time")
     plt.ylabel("Sentiment")
-    plt.save()
+    plt.show()
 
 
 def handle_events(match_events):
@@ -102,10 +105,12 @@ def handle_events(match_events):
 
 
 def get_match_events(fixture_ID):
-    with open(str(fixture_ID) + '.json', 'r') as match_events:
-        match_events = myfile.read()
+    with open(str(fixture_ID) + '.json', 'r') as match_events_file:
+        match_events = match_events_file.read()
     json_response = json.loads(match_events)
-    match_events = json.dumps(json_response["api"]["fixtures"][0])
+   #match_events = json.dumps(json_response["api"]["fixtures"][0])
+
+    match_events = json.dumps(json_response)
     return match_events
 
 
