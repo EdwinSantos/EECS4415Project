@@ -4,6 +4,7 @@ import json
 import os
 import requests
 
+# List of leagues that can be chosen from
 leagues = {
     "Champions League": 530,
     "Premier League": 524,
@@ -36,65 +37,56 @@ def main():
             home_team_hashtag = input("Enter home team hashtag with #: ")
             away_team_hashtag = input("Enter away team hashtag with #: ")
             neutral_team_hashtag = input("Enter neutral hashtag with #: ")
+            # Get details about the game before it starts
             fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
             save_match_events(fixture_ID)
-            matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" + neutral_team_hashtag[1:] + "\"", timestamp,
+            matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"",
+                            "\"" + neutral_team_hashtag[1:] + "\"", timestamp,
                             fixture_ID, False])
             nextMatch = (input("Add another match? (Y/N): ") == "Y")
             if not nextMatch:
                 break
     else:
         # Values used in debugging mode
-        league_id = 524
-        home_team_id = 46
-        away_team_id = 71
         home_team_hashtag = "#LCFC"
         away_team_hashtag = "#NCFC"
         neutral_team_hashtag = "#LeiNor"
         fixture_ID = 157179
         timestamp = 1576335600
         matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" +
-                        neutral_team_hashtag[1:]+ "\"" , timestamp, fixture_ID, False])
+                        neutral_team_hashtag[1:] + "\"", timestamp, fixture_ID, False])
         # Values used in debugging mode
-        league_id = 524
-        home_team_id = 62
-        away_team_id = 66
         home_team_hashtag = "#SUFC"
         away_team_hashtag = "#AVFC"
         neutral_team_hashtag = "#SUFAVL"
         fixture_ID = 157182
         timestamp = 1576335600
         matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" +
-                        neutral_team_hashtag[1:]+ "\"" , timestamp, fixture_ID, False])
-
-    print(matches)
+                        neutral_team_hashtag[1:] + "\"", timestamp, fixture_ID, False])
+    # Create a json object that can be passed as an argument
     matches_json = json.dumps(matches)
 
-    # print("Ran Twitter")
+    # Start the twitter listener class
     os.system('python twitter.py ' + "\"" + matches_json + "\"")
-    # print("Ran to CSV")
 
     # Trigger analyzer to process tweets that were outputed by the farm
     os.system("python toCSV.py " + "\"" + matches_json + "\"")
 
     # trigger analyzer to process tweets that were outputed by the farm
     os.system("python SentimentalValueTesting.py " + "\"" + matches_json + "\"")
-    #Update the match events post game
+
+    # Update the match events post game
     for match in matches:
         save_match_events(match[4])
     # Build the graph
     os.system("python makeGraph.py " + "\"" + matches_json + "\"")
 
 
-
 def get_teams(league_id):
+    # Build queery that will request all the teams in the league and their ID
     url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/" + str(league_id)
-    if debugging:
-        with open("premteams.json", encoding="utf8") as json_file:
-            json_response = json.load(json_file)
-    else:
-        response = query_api(url)
-        json_response = json.loads(response)
+    response = query_api(url)
+    json_response = json.loads(response)
     teams = {}
     # Store the teams in a dictionary because its easy to output this way
     for team in json_response["api"]["teams"]:
@@ -104,14 +96,10 @@ def get_teams(league_id):
 
 
 def get_fixture_id(home_team_id, away_team_id, league_id):
+    # Build query to get the fixture id given home and away team and league ID
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/" + str(home_team_id) + "/" + str(league_id)
-
-    if debugging:
-        with open("fixtureID.json", encoding="utf8") as json_file:
-            json_response = json.load(json_file)
-    else:
-        response = query_api(url)
-        json_response = json.loads(response)
+    response = query_api(url)
+    json_response = json.loads(response)
     # Get fixture ID this is useful for getting information easier from the API
     for fixture in json_response["api"]["fixtures"]:
         targetFixture_id = 0
@@ -125,7 +113,6 @@ def get_fixture_id(home_team_id, away_team_id, league_id):
 
 def save_match_events(fixture_id):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/" + str(fixture_id)
-    print(debugging)
     if debugging:
         with open("MatchEvents.json", encoding="utf8") as json_file:
             json_response = json.load(json_file)
@@ -152,7 +139,7 @@ def query_api(url):
 
 
 def get_key():
-    file = open("key.txt", "r")
+    file = open("APIkey.txt", "r")
     return file.read()
 
 

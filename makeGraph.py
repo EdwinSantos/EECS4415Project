@@ -14,55 +14,47 @@ debugging = False
 neutraltag = ""
 
 def main():
+    print("Started to build graph")
     matches = json.loads(sys.argv[1])
-    # Go over all the matches that are passed
     global neutraltag
+    # Go over all the matches that are passed
     for match in matches:
-        hometag = match[0]
-        awaytag = match[1]
         neutraltag = match[2]
-        timestamp = match[3]
         fixtureID = match[4]
+        # Get the events that were queried after the match ended
         match_events = get_match_events(fixtureID)
-        # Pass whatever detail you need to get the results file
+        # Get the sentiments that were calculated previously
         twitter_sentiment = get_sentiment(fixtureID)
-        print(twitter_sentiment)
         build_graph(match_events, twitter_sentiment, match)
-
-
-def get_sentiment(fixtureID):
-    data = pd.read_csv(os.path.join("#" + neutraltag, str(fixtureID) + ".csv"))
-    return data
 
 
 def build_graph(match_events, twitter_sentiment, match):
     start_time, end_time, events = handle_events(match_events)
-
+    # Set the parameters for the graph
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
     ax.set_xlim([start_time, end_time])
     ax.set_ylim([-10, 10])
+    # Plot all the events with their respective text on the graph
     for event in events:
         plt.axvline(event[0])
-        print(event[1])
         plt.text(event[0], -9, event[1], rotation=90)
 
     times = twitter_sentiment["EndOfTimeWindow"].values
-    fixtimes = []
+    fixturetimes = []
     for time in times:
-        fixtimes.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S'))
+        fixturetimes.append(datetime.strptime(time, '%Y-%m-%d %H:%M:%S'))
     home = twitter_sentiment["Home Team"].values
     away = twitter_sentiment["Away team"].values
     neutral = twitter_sentiment["Neutral"].values
-    print(times)
-    plt.plot(fixtimes, home, '.r-', label=match[0])
-    plt.plot(fixtimes, away, '.b-', label=match[1])
-    plt.plot(fixtimes, neutral, '.g-', label=match[2])
+    plt.plot(fixturetimes, home, '.r-', label=match[0])
+    plt.plot(fixturetimes, away, '.b-', label=match[1])
+    plt.plot(fixturetimes, neutral, '.g-', label=match[2])
     plt.legend(loc="upper left")
-
     plt.xlabel("Time")
     plt.ylabel("Sentiment")
     plt.show()
+    plt.savefig(os.path.join("#" + match[2], match[2] + ".png"))
 
 
 def handle_events(match_events):
@@ -90,7 +82,7 @@ def handle_events(match_events):
 
     for event in json_events["events"]:
         game_time = event["elapsed"]
-        # Get rid of subsitutions because it creates too many events
+        # Get rid of subs because it creates too many events
         if event["type"] == "subst":
             continue
         detail = str(game_time) + " " + event["detail"] + " " + event["player"] + " (" + event["teamName"] + ")"
@@ -108,10 +100,13 @@ def get_match_events(fixture_ID):
     with open(str(fixture_ID) + '.json', 'r') as match_events_file:
         match_events = match_events_file.read()
     json_response = json.loads(match_events)
-   #match_events = json.dumps(json_response["api"]["fixtures"][0])
-
     match_events = json.dumps(json_response)
     return match_events
+
+
+def get_sentiment(fixtureID):
+    data = pd.read_csv(os.path.join("#" + neutraltag, str(fixtureID) + ".csv"))
+    return data
 
 
 if __name__ == "__main__": main()

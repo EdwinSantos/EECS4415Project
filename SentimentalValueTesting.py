@@ -19,12 +19,12 @@ sia = SIA()
 
 
 def main():
+    print("Started to get sentiment value")
     hashtagtypes = ["Home", "Away", "Neutral"]
     matches = json.loads(sys.argv[1])
     global starttime
     global endtime
     for match in matches:
-        print(match)
         starttime = match[3]
         endtime = starttime + 7200
         build_table(match)
@@ -51,7 +51,6 @@ def build_table(match):
     output_df.columns = COL
     fixtureID = match[4]
     output_df.to_csv(os.path.join("#" + neutraltag, str(fixtureID) + ".csv"), index=False)
-    print(output_df)
 
 
 # Process dataframe to get sentiment value
