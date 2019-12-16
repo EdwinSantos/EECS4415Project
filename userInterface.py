@@ -11,58 +11,37 @@ leagues = {
     "Championship": 565
 }
 
-debugging = False
-
 
 def main():
-    global debugging
-    debugging = (input("Running in debug mode (Y/N): ") == "Y")
     matches = []
-    if not debugging:
-        while True:
-            # Print out list of leagues that can be chosen from. This list can be expanded but it should not be
-            # expanded beyond leagues in primarily english speaking countries.
-            for league in leagues:
-                print(repr(league), ":", leagues[league])
-            league_id = int(input("Enter league ID: "))
-            # Get all the teams in that league from the API and let the user pick what teams they are going to use
-            teams = get_teams(league_id)
-            for team in teams:
-                print(team, ":", teams[team])
-            # get teams in that league
-            home_team_id = int(input("Enter home team number: "))
-            away_team_id = int(input("Enter away team number: "))
-            # Prompt the user to enter the hashtags that are used. The last tag can be generated automatically
-            # but it is not reliable
-            home_team_hashtag = input("Enter home team hashtag with #: ")
-            away_team_hashtag = input("Enter away team hashtag with #: ")
-            neutral_team_hashtag = input("Enter neutral hashtag with #: ")
-            # Get details about the game before it starts
-            fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
-            save_match_events(fixture_ID)
-            matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"",
-                            "\"" + neutral_team_hashtag[1:] + "\"", timestamp,
-                            fixture_ID, False])
-            nextMatch = (input("Add another match? (Y/N): ") == "Y")
-            if not nextMatch:
-                break
-    else:
-        # Values used in debugging mode
-        home_team_hashtag = "#LCFC"
-        away_team_hashtag = "#NCFC"
-        neutral_team_hashtag = "#LeiNor"
-        fixture_ID = 157179
-        timestamp = 1576335600
-        matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" +
-                        neutral_team_hashtag[1:] + "\"", timestamp, fixture_ID, False])
-        # Values used in debugging mode
-        home_team_hashtag = "#SUFC"
-        away_team_hashtag = "#AVFC"
-        neutral_team_hashtag = "#SUFAVL"
-        fixture_ID = 157182
-        timestamp = 1576335600
-        matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"", "\"" +
-                        neutral_team_hashtag[1:] + "\"", timestamp, fixture_ID, False])
+    while True:
+        # Print out list of leagues that can be chosen from. This list can be expanded but it should not be
+        # expanded beyond leagues in primarily english speaking countries.
+        for league in leagues:
+            print(repr(league), ":", leagues[league])
+        league_id = int(input("Enter league ID: "))
+        # Get all the teams in that league from the API and let the user pick what teams they are going to use
+        teams = get_teams(league_id)
+        for team in teams:
+            print(team, ":", teams[team])
+        # get teams in that league
+        home_team_id = int(input("Enter home team number: "))
+        away_team_id = int(input("Enter away team number: "))
+        # Prompt the user to enter the hashtags that are used. The last tag can be generated automatically
+        # but it is not reliable
+        home_team_hashtag = input("Enter home team hashtag with #: ")
+        away_team_hashtag = input("Enter away team hashtag with #: ")
+        neutral_team_hashtag = input("Enter neutral hashtag with #: ")
+        # Get details about the game before it starts
+        fixture_ID, timestamp = get_fixture_id(home_team_id, away_team_id, league_id)
+        save_match_events(fixture_ID)
+        matches.append(["\"" + home_team_hashtag[1:] + "\"", "\"" + away_team_hashtag[1:] + "\"",
+                        "\"" + neutral_team_hashtag[1:] + "\"", timestamp, fixture_ID])
+        # Ask the user if they want to add another match
+        next_match = (input("Add another match? (Y/N): ") == "Y")
+        if not next_match:
+            break
+
     # Create a json object that can be passed as an argument
     matches_json = json.dumps(matches)
 
@@ -113,12 +92,8 @@ def get_fixture_id(home_team_id, away_team_id, league_id):
 
 def save_match_events(fixture_id):
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/" + str(fixture_id)
-    if debugging:
-        with open("MatchEvents.json", encoding="utf8") as json_file:
-            json_response = json.load(json_file)
-    else:
-        response = query_api(url)
-        json_response = json.loads(response)
+    response = query_api(url)
+    json_response = json.loads(response)
 
     file_name = str(json_response["api"]["fixtures"][0]["fixture_id"]) + ".json"
     with open(file_name, 'w') as outputFile:

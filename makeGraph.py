@@ -9,8 +9,6 @@ import pandas as pd
 import requests
 import json
 
-debugging = False
-
 neutraltag = ""
 
 def main():
