@@ -1,2 +1,0 @@
-python twitter.py > tweets.txt
-cat tweets.txt | python toCSV.py
