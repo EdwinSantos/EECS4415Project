@@ -52,7 +52,7 @@ def main():
     os.system("python toCSV.py " + "\"" + matches_json + "\"")
 
     # trigger analyzer to process tweets that were outputed by the farm
-    os.system("python SentimentalValueTesting.py " + "\"" + matches_json + "\"")
+    os.system("python SentimentalValue.py " + "\"" + matches_json + "\"")
 
     # Update the match events post game
     for match in matches:
